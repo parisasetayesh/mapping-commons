@@ -33,6 +33,8 @@ const pathways = defineCollection({
   schema: z.object({
     id:text, title:text, summary:text, audiences:list.min(1), level:text, estimated_minutes:z.number().int().positive(),
     outcome:text, example_case:text.optional(), course_example:text.optional(),
+    designers:list.default([]), purpose:text.optional(),
+    resources:z.array(z.object({title:text,url:z.url(),description:text.optional()}).strict()).default([]),
     steps:z.array(z.object({lesson:text,label:text,required:z.boolean(),note:text})).min(1),
   }).strict(),
 });

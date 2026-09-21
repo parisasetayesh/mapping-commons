@@ -1,0 +1,24 @@
+[
+  {
+    "id": "geoprocessing-workflows-operation-comparison",
+    "file": "operation-comparison.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      7,
+      20
+    ],
+    "source_deck": "geoprocessing-tools",
+    "function": "instructional diagram",
+    "description": "Buffer creates distance zones; Clip retains input inside a boundary; Dissolve groups features by shared values; Intersect retains shared overlap.",
+    "alt_text": "Buffer creates distance zones; Clip retains input inside a boundary; Dissolve groups features by shared values; Intersect retains shared overlap.",
+    "caption": "Four operations, four different questions. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "1c72215b33d9f4d71999eb9e96438411ec8a01e07335bb52e65818b60df8cef0",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

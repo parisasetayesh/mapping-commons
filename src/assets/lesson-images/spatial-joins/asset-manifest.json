@@ -1,0 +1,25 @@
+[
+  {
+    "id": "spatial-joins-point-counts",
+    "file": "point-counts.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      2,
+      5,
+      7
+    ],
+    "source_deck": "spatialjoin",
+    "function": "instructional diagram",
+    "description": "Two fictional district polygons contain two points in A and one in B. A one-to-one spatial summary has one row per district with counts 2 and 1.",
+    "alt_text": "Two fictional district polygons contain two points in A and one in B. A one-to-one spatial summary has one row per district with counts 2 and 1.",
+    "caption": "A spatial rule becomes a target-level summary. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 3",
+    "sha256": "2bf6b10c5e28973e70323577c2d0bece8ed18a7eed11dd8aa036fcdeee49ccb2",
+    "step": 3,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

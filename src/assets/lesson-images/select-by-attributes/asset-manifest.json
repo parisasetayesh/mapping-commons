@@ -1,0 +1,25 @@
+[
+  {
+    "id": "select-by-attributes-query-example",
+    "file": "query-example.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      12,
+      17,
+      19
+    ],
+    "source_deck": "gisc-attribute-location-queries-v9",
+    "function": "instructional diagram",
+    "description": "Fictional records A active 12 and C active 10 satisfy active AND count at least 10. B inactive 15, D active 9, and E active with missing count are excluded.",
+    "alt_text": "Fictional records A active 12 and C active 10 satisfy active AND count at least 10. B inactive 15, D active 9, and E active with missing count are excluded.",
+    "caption": "A condition is tested against every record. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "f1d6c84cda26cecdae7ba9754f832b08922f094f89117843b2b951398cb49bad",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

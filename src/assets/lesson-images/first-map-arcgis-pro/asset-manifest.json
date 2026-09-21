@@ -1,0 +1,26 @@
+[
+  {
+    "id": "first-map-arcgis-pro-interface-orientation",
+    "file": "interface-orientation.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      4,
+      7,
+      66,
+      68
+    ],
+    "source_deck": "arcgis-pro-ui-tour",
+    "function": "instructional diagram",
+    "description": "Simplified interface schematic: ribbon across the top, Contents at left, map view in the middle, and Catalog or other panes at right. This is an orientation diagram, not a software screenshot.",
+    "alt_text": "Simplified interface schematic: ribbon across the top, Contents at left, map view in the middle, and Catalog or other panes at right. This is an orientation diagram, not a software screenshot.",
+    "caption": "Find the role before looking for the button. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "eb25ec5ad3e7d8edb4e6b7db3f68cfe905dfbdaac7fd948efe71a8dda061a106",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

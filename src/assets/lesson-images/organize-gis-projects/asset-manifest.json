@@ -1,0 +1,27 @@
+[
+  {
+    "id": "organize-gis-projects-project-dependencies",
+    "file": "project-dependencies.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      4,
+      12,
+      20,
+      28,
+      42
+    ],
+    "source_deck": "project-map-shapefile-geodatabase-featureclass-layer",
+    "function": "instructional diagram",
+    "description": "A project has a map and a data-container connection. The map has a layer; the container holds a feature class. The layer references the feature class.",
+    "alt_text": "A project has a map and a data-container connection. The map has a layer; the container holds a feature class. The layer references the feature class.",
+    "caption": "Views and data are connected, not identical. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 1",
+    "sha256": "bfb9aad023b9dbf005335d0f9853c4508ea9628e5d33795e0eba40dfa69e6512",
+    "step": 1,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

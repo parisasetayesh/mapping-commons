@@ -19,11 +19,11 @@ prerequisites: [what-counts-as-a-map]
 materials: ["One static or interactive map", "Paper, annotation software, or the worksheet table in this lesson"]
 produces: "An annotated map anatomy sheet and two-sentence reading."
 accessibility: {installation_required: false, account_required: false, large_screen_recommended: true}
-authors: ["Parisa Setayesh"]
+authors: ["Shokran Rahiminejad"]
 content_owner: "Parisa Setayesh"
 status: complete-draft
 license: CC-BY-4.0
-source_ids: [src-introduction-cartography-openalg, src-making-effective-maps, src-cartographic-design-process]
+source_ids: [src-introduction-cartography-openalg, src-making-effective-maps, src-cartographic-design-process, src-rahiminezhad-cartographic-principles]
 last_reviewed: "2026-09-21"
 ---
 
@@ -50,7 +50,7 @@ Learning a map's anatomy helps you slow down. Instead of jumping directly to a p
 
 ## Step 1: Look before reading
 
-Choose one map. Before reading its title or clicking anything, look at it for five seconds and record:
+Use the map below for a five-second first impression, or choose a map of your own. Before studying the caption or legend, record:
 
 - What did you notice first?
 - What appeared most important?
@@ -59,7 +59,22 @@ Choose one map. Before reading its title or clicking anything, look at it for fi
 
 This first impression is part of the map's communication. Size, placement, color, contrast, and familiar geographic shapes begin framing the message before you read the documentation.
 
+
+![New York City-shaped polygons all filled pale blue against a dark background. Thin interior boundaries remain visible; the fill does not encode different quantities.](../../../assets/lesson-images/read-map-anatomy/single-symbol-map.png)
+
+*One symbol makes the geographic outline the foreground. The source labels the features as 262 ZIP codes; the underlying boundary dataset has not been supplied. Source: Shokran Rahiminejad, Cartographic Principles, slide 5. Image reuse rights await confirmation; shown for local review.*
+
+**Read the example:** The pale land shapes stand out from the dark background. Every polygon has the same fill, so fill color does not encode a larger or smaller quantity. This is **figure–ground**: separation between the subject you notice and the surface behind it. The internal boundaries show detail, but their meaning needs documentation beyond the outline itself.
+
 ## Step 2: Identify the map's working parts
+
+Start with the annotated example below. It names the parts of a layout, but it is not a fully documented thematic map.
+
+![A light-background adaptation of an annotated layout points to a title, neatline, data frame, grid, legend, locator, north arrow, scale bar, and source line. The title is a placeholder and the legend lists City, Tribe, and Boundary while the map uses colored areas.](../../../assets/lesson-images/read-map-anatomy/annotated-map-anatomy-light.png)
+
+*Light-background adaptation for reading the callouts. This is an illustrative diagram, not a geographic measurement reference. The original teaching image is retained in the source archive.*
+
+*Anatomy diagram from the teaching deck. Use its callouts to locate elements, then question whether those elements actually explain the map. Source: Shokran Rahiminejad, Cartographic Principles, slide 4. Image reuse rights await confirmation; shown for local review.*
 
 Not every map contains every element, and interactive maps may place them in menus or pop-ups. Look for the following:
 
@@ -79,6 +94,14 @@ Not every map contains every element, and interactive maps may place them in men
 | **Interface controls** | Change layers, dates, filters, or views on an interactive map | Which view is shown by default? |
 
 Circle or label each element you can find. Mark absent elements with a question mark rather than assuming they are unnecessary.
+
+### Find the parts, then check them
+
+The **neatline** is the border around the map layout. The **data frame** is the area that holds the mapped geography. A grid can help locate positions when its coordinate values are documented. An inset should show enough geographic context to locate the main map.
+
+In this example, the title says “MAP TITLE GOES HERE.” The legend lists “City,” “Tribe,” and “Boundary,” but those entries do not explain the colored areas. The locator contains a dot without surrounding geography. Record those as incomplete explanations, even though each element is visibly present.
+
+The source line mentions NYC Department of City Planning, ZCTA boundaries, and the 2020 Census. This is a credit printed in the supplied image, not an independently verified dataset record. A usable source record would also let you identify the exact dataset and its date.
 
 ## Step 3: Decode the legend
 
@@ -113,6 +136,15 @@ Draw arrows showing the first three places your eye travels. Then complete:
 
 Visual prominence is not necessarily the same as substantive importance. A large red area may dominate a map even when the value is based on a small number of observations.
 
+
+![Two layout diagrams: on the left, the legend overlaps the title and text is isolated in the lower right; on the right, the title aligns with the map and a separate right column aligns the legend and text.](../../../assets/lesson-images/read-map-anatomy/map-layout-comparison-light.png)
+
+*The deck compares a crowded, misaligned composition with a layout whose map, legend, and notes share clear edges. Source: Shokran Rahiminejad, Cartographic Principles, slide 17. Image reuse rights await confirmation; shown for local review.*
+
+**Compare the layouts:** In the left diagram, the legend collides with the title and the notes occupy an isolated corner. In the right diagram, the title and map align, while the legend and notes share a side column. Without changing the map's data, the arrangement changes how easily a reader can connect the map to its explanation.
+
+Sketch one change to the left layout. Name the problem it solves: overlap, reading order, alignment, or separation. The deck's “good” label is an example of a workable arrangement, not a rule that every map must use a right-hand legend.
+
 ## Step 5: Examine the frame and context
 
 A map's frame decides what is inside the visual argument. Record:
@@ -140,7 +172,7 @@ The anatomy of a map includes its absences and interfaces, not only the parts pr
 
 ## Step 6: Complete the anatomy sheet
 
-Use this table to record your reading:
+Use the annotated example or your own map to complete this table. If you use the example, include at least two incomplete elements and write the documentation you would need to repair them:
 
 | Question | Your observation |
 |---|---|
@@ -163,6 +195,7 @@ Finish with two sentences:
 - [ ] I can explain what the major colors, sizes, shapes, or lines mean.
 - [ ] I traced the map's visual hierarchy.
 - [ ] I distinguished zero, no data, and missing information—or recorded that the map does not.
+- [ ] I checked whether the title and legend explain the mapped features, rather than merely being present.
 - [ ] I wrote a two-sentence interpretation that includes a limitation.
 
 ## Key takeaway
@@ -178,3 +211,7 @@ Continue to **Color, Classification, and Visual Hierarchy** to examine how desig
 - OpenALG, *Introduction to Cartography*.
 - *Making Effective Maps: Cartographic Visualization for GIS*.
 - *Making Effective Maps*, “Cartographic Design Process.”
+
+- Shokran Rahiminejad, *Cartographic Principles*, supplied teaching deck. Visuals and activities adapted from slides 4, 5, and 17; contextual guidance from slides 3, 18, and 19.
+
+**Visual credits and review:** Lesson author: Shokran Rahiminejad, credited by the project owner for this adaptation of his teaching material. The embedded images are included for local editorial review, with their original labels intact. Their underlying creators and reuse permissions remain unconfirmed; the lesson's CC-BY-4.0 label does not establish a license for these images.

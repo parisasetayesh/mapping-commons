@@ -1,7 +1,7 @@
 ---
 import { render, type CollectionEntry } from 'astro:content';
 import PathwayBand from './pathway-band.astro';
-import DomainLabel from './domain-label.astro';
+import LessonReader from './lesson-reader.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { curriculum, domains, statusLabels, readable, pathwayLessonHref } from '../lib/content';
 interface Props { entry: CollectionEntry<'lessons'>; pathway?: CollectionEntry<'pathways'>; }
@@ -16,13 +16,19 @@ const next=pathway?.data.steps[currentIndex+1];
 const lessonHref=(id:string)=>pathway?.data.steps.some(s=>s.lesson===id)?pathwayLessonHref(pathway.id,id):`${base}lessons/${id}/`;
 ---
 <BaseLayout title={d.title} description={d.summary}>
-  <Fragment slot="below-header">{pathway&&<PathwayBand pathway={pathway} current={entry.id} lessonById={lessonById} />}</Fragment>
-  <a class="back-link" href={`${base}lessons/`}>← All lessons</a>
-  <header class="page-header"><p class="eyebrow"><DomainLabel domain={d.primary_category} /></p><h1>{d.title}</h1><p class="lede">{d.summary}</p><p>{statusLabels[d.status]} · {d.duration_minutes} minutes · {readable(d.level)} · {readable(d.lesson_type)}</p>
-  <p class="pilot-note">{planned?'Planned lesson. This page outlines the intended sequence and checkpoint; the full lesson is not yet written.':d.status==='complete-draft'?'Draft lesson. This material has not completed editorial or classroom review.':statusLabels[d.status]}</p></header>
-  <div class="lesson-grid">
-    <aside class="contents"><nav aria-label="On this page"><h2>In this lesson</h2><ol>{headings.filter(h=>h.depth===2).map(h=><li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol></nav></aside>
-    <article class="lesson">
+  <Fragment slot="below-header">
+    {pathway&&<PathwayBand pathway={pathway} current={entry.id} lessonById={lessonById} />}
+    <header class="lesson-title-band" data-domain={d.primary_category}>
+      <a href={`${base}lessons/`} aria-label="Back to all lessons">←</a>
+      <h1>{d.title}</h1>
+      <div class="lesson-band-meta"><span class="tile-level"><span class="level-squares" aria-hidden="true">{[1,2,3].map(n=><span class:list={[{filled:n<=({beginner:1,intermediate:2,advanced:3}[d.level])}]} />)}</span>{readable(d.level)}</span><span>{headings.filter(h=>h.depth===2&&/^Step \d/i.test(h.text)).length || headings.filter(h=>h.depth===2).length} {headings.some(h=>/^Step \d/i.test(h.text))?'steps':'sections'}</span></div>
+    </header>
+  </Fragment>
+  <LessonReader headings={headings}>
+    <div class="reader-intro">
+      <p class="reader-status">{planned?'Planned lesson · Full lesson not yet written.':d.status==='complete-draft'?'Draft lesson · Not yet editorially or classroom reviewed.':statusLabels[d.status]} · {d.duration_minutes} minutes</p>
+      {!headings.some(h=>h.text.toLowerCase()==='at a glance')&&<><h2 id="reader-overview">At a glance</h2><p>{d.summary}</p></>}
+      <details class="reader-preparation"><summary>Preparation and learning objectives</summary>
       <section class="lesson-meta" aria-labelledby="objectives-heading"><h2 id="objectives-heading">{planned?'Planned learning objectives':'Learning objectives'}</h2><ul>{d.learning_objectives.map(objective=><li>{objective}</li>)}</ul>{d.produces&&<p><strong>{planned?'Planned output:':'You will produce:'}</strong> {d.produces}</p>}</section>
       <section class="requirements" aria-labelledby="requirements-heading"><h2 id="requirements-heading">Before you begin</h2>
         <p><strong>For:</strong> {d.audiences.map(readable).join(', ')}</p>
@@ -32,6 +38,9 @@ const lessonHref=(id:string)=>pathway?.data.steps.some(s=>s.lesson===id)?pathway
         {d.materials.length>0&&<><h3>Materials</h3><ul>{d.materials.map(item=><li>{item}</li>)}</ul></>}
         {d.accessibility&&<div class="access-note"><strong>Access and preparation</strong><ul><li>Installation {d.accessibility.installation_required?'required':'not required'}.</li><li>Account {d.accessibility.account_required?'required':'not required'}.</li><li>Large screen {d.accessibility.large_screen_recommended?'recommended':'not required'}.</li></ul></div>}
       </section>
+      </details>
+    </div>
+    <article class="lesson">
       <div class="prose"><Content /></div>
       {pathway&&<nav class="pathway-reading-nav" aria-label="Continue in this pathway">
         {previous?<a href={pathwayLessonHref(pathway.id,previous.lesson)}><span>← Previous lesson</span><strong>{lessonById.get(previous.lesson)!.data.title}</strong></a>:<a href={`${base}pathways/`}>← All pathways</a>}
@@ -44,5 +53,5 @@ const lessonHref=(id:string)=>pathway?.data.steps.some(s=>s.lesson===id)?pathway
         {d.source_ids.length>0&&<details><summary>Source record identifiers</summary><ul>{d.source_ids.map(id=><li>{id}</li>)}</ul></details>}
       </footer>
     </article>
-  </div>
+  </LessonReader>
 </BaseLayout>

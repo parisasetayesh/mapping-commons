@@ -1,0 +1,28 @@
+[
+  {
+    "id": "reproducible-spatial-workflows-workflow",
+    "file": "workflow.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      22,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "source_deck": "professional-geospatial-programming",
+    "function": "instructional diagram",
+    "description": "Load → Inspect → Analyze → Visualize → Export. Keep input versions, parameters, checks, and limitations with the output.",
+    "alt_text": "Load → Inspect → Analyze → Visualize → Export. Keep input versions, parameters, checks, and limitations with the output.",
+    "caption": "Keep the analysis inspectable. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "a3e9534e90bf5f724dd3d6128cd507cf0baeddb0012e5102ad7f424178397530",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

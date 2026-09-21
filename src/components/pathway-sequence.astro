@@ -3,9 +3,16 @@ import type { CollectionEntry } from 'astro:content';
 import { statusLabels, domains, pathwayLessonHref } from '../lib/content';
 interface Props { pathway: CollectionEntry<'pathways'>; lessonById: Map<string, CollectionEntry<'lessons'>>; }
 const {pathway, lessonById}=Astro.props;
+let column=0, row=0, previous='';
+const positions=pathway.data.steps.map(step=>{
+ const category=lessonById.get(step.lesson)!.data.primary_category;
+ if(category!==previous){column++;row=1;}else row++;
+ previous=category;
+ return {column,row};
+});
 ---
 <ol class="pathway-sequence" tabindex="0" aria-label={`${pathway.data.title}: lessons in order`}>
-  {pathway.data.steps.map((step,i)=>{const lesson=lessonById.get(step.lesson)!;return <li>
+  {pathway.data.steps.map((step,i)=>{const lesson=lessonById.get(step.lesson)!;return <li style={`grid-column:${positions[i].column};grid-row:${positions[i].row}`}>
     <a class="pathway-square" data-domain={lesson.data.primary_category} href={pathwayLessonHref(pathway.id,lesson.id)}>
       <span class="pathway-square-top"><span class="step-number">{String(i+1).padStart(2,'0')}</span><span>{step.required?'Required':'Optional'}</span></span>
       <span class="pathway-square-title">{lesson.data.title}</span>

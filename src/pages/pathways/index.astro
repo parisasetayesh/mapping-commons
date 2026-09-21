@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PathwaySequence from '../../components/pathway-sequence.astro';
-import { curriculum, requiredMinutes, pathwayLessonHref } from '../../lib/content';
+import { curriculum, requiredMinutes } from '../../lib/content';
 const {pathways,lessonById}=await curriculum();
 const ordered=[...pathways].sort((a,b)=>Number(b.id==='public-data-community-meeting')-Number(a.id==='public-data-community-meeting'));
 ---
 <BaseLayout title="Pathways" showEdition={false}>
   <header class="pathways-heading"><h1>Pathways</h1><p class="lede">A sequence of lessons for something you want to do.</p></header>
   {ordered.map(p=><article class="pathway-row" aria-labelledby={`title-${p.id}`}>
-    <div class="pathway-row-heading"><div><h2 id={`title-${p.id}`}><a href={pathwayLessonHref(p.id,p.data.steps[0].lesson)}>{p.data.title}</a></h2><p>{p.data.outcome}</p></div><a class="pathway-start" href={pathwayLessonHref(p.id,p.data.steps[0].lesson)}>Explore pathway <span aria-hidden="true">→</span><span class="sr-only">: {p.data.title}</span></a></div>
+    <div class="pathway-row-heading"><div><h2 id={`title-${p.id}`}><a href={`${import.meta.env.BASE_URL}pathways/${p.id}/`}>{p.data.title}</a></h2><p>{p.data.outcome}</p></div><a class="pathway-start" href={`${import.meta.env.BASE_URL}pathways/${p.id}/`}>Explore pathway <span aria-hidden="true">→</span><span class="sr-only">: {p.data.title}</span></a></div>
     <p class="pathway-row-meta">{requiredMinutes(p,lessonById)} required minutes · {p.data.steps.length} lessons{p.data.steps.some(s=>!s.required)?' · Optional lessons add time':''}</p>
     <PathwaySequence pathway={p} lessonById={lessonById} />
     <a class="pathway-details" href={`${import.meta.env.BASE_URL}pathways/${p.id}/`}>About this pathway</a>

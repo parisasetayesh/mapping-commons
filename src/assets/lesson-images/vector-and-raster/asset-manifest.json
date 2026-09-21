@@ -1,0 +1,40 @@
+[
+  {
+    "id": "vector-and-raster-landscape-models",
+    "file": "landscape-models.png",
+    "original_file": "ppt/media/image3.png",
+    "slide": 4,
+    "source_deck": "vector-vs-raster-data",
+    "function": "instructional example",
+    "description": "A source comparison of representations of a landscape as discrete features and raster cells.",
+    "alt_text": "A source comparison of representations of a landscape as discrete features and raster cells.",
+    "caption": "Source comparison of spatial data models. Identify what becomes a feature and what becomes a cell value.",
+    "credit": "Lesson source: Shokran Rahiminejad. Source comparison of spatial data models. Identify what becomes a feature and what becomes a cell value.",
+    "rights_status": "unknown",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Uncropped packaged source; retain original legend and credits.",
+    "lesson_placement": "Step 1",
+    "step": 1,
+    "sha256": "003f89ef721d9b0c5754d7382c6243fbf2a056abcea5b14517da295926047fe3",
+    "adaptation": "Original underlying image retained, separate from the dark slide template."
+  },
+  {
+    "id": "vector-and-raster-land-cover-cells",
+    "file": "land-cover-cells.png",
+    "original_file": "ppt/media/image18.png",
+    "slide": 12,
+    "source_deck": "vector-vs-raster-data",
+    "function": "instructional example",
+    "description": "A land-cover example showing regions represented by categorical cell values.",
+    "alt_text": "A land-cover example showing regions represented by categorical cell values.",
+    "caption": "Categorical land-cover example from the deck. A grid can encode classes as well as continuous measurements.",
+    "credit": "Lesson source: Shokran Rahiminejad. Categorical land-cover example from the deck. A grid can encode classes as well as continuous measurements.",
+    "rights_status": "unknown",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Uncropped packaged source; retain original legend and credits.",
+    "lesson_placement": "Step 3",
+    "step": 3,
+    "sha256": "413836d7d7042534ad1947a672a5fcf5aa4d1c50eedd2769f831f7e5b8d1038a",
+    "adaptation": "Original underlying image retained, separate from the dark slide template."
+  }
+]

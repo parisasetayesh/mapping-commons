@@ -17,15 +17,15 @@ steps:
     required: true
     note: "Identify the dashboard's purpose, controls, legend, time period, and geographic unit."
 
-  - lesson: read-metadata-before-you-map
-    label: "Understand the measurements"
-    required: true
-    note: "Translate field definitions, sources, collection methods, and update schedules into plain language."
-
   - lesson: what-map-leaves-out
     label: "Identify limits and omissions"
     required: true
     note: "Ask what the map cannot show and which experiences remain outside its data model."
+
+  - lesson: read-metadata-before-you-map
+    label: "Understand the measurements"
+    required: true
+    note: "Translate field definitions, sources, collection methods, and update schedules into plain language."
 
   - lesson: data-ownership-privacy-uncertainty
     label: "Ask who controls the data"

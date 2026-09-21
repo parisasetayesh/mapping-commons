@@ -1,0 +1,40 @@
+[
+  {
+    "id": "mapping-power-and-ethics-historical-route-map",
+    "file": "historical-route-map.jpg",
+    "original_file": "ppt/media/image4.jpg",
+    "slide": 5,
+    "source_deck": "politicsethicsofmapping",
+    "function": "instructional example",
+    "description": "A long, compressed historical route-map excerpt with roads and place labels.",
+    "alt_text": "A long, compressed historical route-map excerpt with roads and place labels.",
+    "caption": "Tabula Peutingeriana example; the deck credits Wikimedia Commons and describes the underlying work as public domain. Exact digital reproduction and edition await confirmation.",
+    "credit": "Lesson source: Shokran Rahiminejad. Tabula Peutingeriana example; the deck credits Wikimedia Commons and describes the underlying work as public domain. Exact digital reproduction and edition await confirmation.",
+    "rights_status": "unknown",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Uncropped packaged source; retain original legend and credits.",
+    "lesson_placement": "Step 2",
+    "step": 2,
+    "sha256": "de02dc71273ca2b837fae0754ff769e20392d8a5f6f65aaa50f6c32f1b8dbe3f",
+    "adaptation": "Original underlying image retained, separate from the dark slide template."
+  },
+  {
+    "id": "mapping-power-and-ethics-redlining-map",
+    "file": "redlining-map.jpg",
+    "original_file": "ppt/media/image11.jpg",
+    "slide": 12,
+    "source_deck": "politicsethicsofmapping",
+    "function": "instructional example",
+    "description": "A historical city map with residential areas separated into green, blue, yellow, and red grades.",
+    "alt_text": "A historical city map with residential areas separated into green, blue, yellow, and red grades.",
+    "caption": "HOLC redlining example from the deck; source credit: Mapping Inequality. Read the categories as historical institutional judgments, not neutral descriptions of residents.",
+    "credit": "Lesson source: Shokran Rahiminejad. HOLC redlining example from the deck; source credit: Mapping Inequality. Read the categories as historical institutional judgments, not neutral descriptions of residents.",
+    "rights_status": "unknown",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Uncropped packaged source; retain original legend and credits.",
+    "lesson_placement": "Step 3",
+    "step": 3,
+    "sha256": "62b61c1fe03f12d788cae6137cc68378de87952a9dbfdb6a70334d31ce981747",
+    "adaptation": "Original underlying image retained, separate from the dark slide template."
+  }
+]

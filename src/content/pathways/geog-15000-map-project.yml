@@ -20,27 +20,26 @@ steps:
     required: true
     note: "Use the course's curated map and report guide to identify one or two suitable sources."
 
-  - lesson: read-public-data-dashboard
-    label: "Read the map before exporting it"
-    required: true
-    note: "Inspect the indicator, geography, date, legend, filters, and comparison options."
-
   - lesson: read-metadata-before-you-map
     label: "Check what the indicator means"
     required: true
     note: "Confirm definitions, sources, coverage, time period, and limitations."
+
+  - lesson: read-public-data-dashboard
+    label: "Read the map before exporting it"
+    required: true
+    note: "Inspect the indicator, geography, date, legend, filters, and comparison options."
 
   - lesson: maps-as-arguments
     label: "Interpret the map's claim"
     required: true
     note: "Explain what pattern the map supports without treating the visualization as self-explanatory."
 
-  - lesson: cite-map-and-data
-    label: "Export caption and cite"
-    required: true
-    note: "Create a usable figure and credit the map platform, dataset, indicator, and date."
-
   - lesson: what-map-leaves-out
     label: "State one limitation"
     required: true
     note: "Name information, scale, population, or experience the selected map does not represent."
+  - lesson: cite-map-and-data
+    label: "Export caption and cite"
+    required: true
+    note: "Create a usable figure and credit the map platform, dataset, indicator, and date."

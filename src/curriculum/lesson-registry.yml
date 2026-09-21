@@ -1,234 +1,422 @@
 version: 0.1
-
 lessons:
   - id: what-counts-as-a-map
-    title: "What Counts as a Map?"
+    title: What Counts as a Map?
     file: understanding-maps/what-counts-as-a-map.md
     primary_category: understanding-maps
-    categories: [understanding-maps, reading-maps-critically]
+    categories:
+      - understanding-maps
+      - reading-maps-critically
     status: complete-draft
     duration_minutes: 30
-
   - id: maps-as-selective-representations
-    title: "Maps as Selective Representations"
+    title: Maps as Selective Representations
     file: understanding-maps/maps-as-selective-representations.md
     primary_category: understanding-maps
-    categories: [understanding-maps, reading-maps-critically]
+    categories:
+      - understanding-maps
+      - reading-maps-critically
     status: structured-stub
     duration_minutes: 25
-
   - id: who-makes-maps-and-why
-    title: "Who Makes Maps and Why?"
+    title: Who Makes Maps and Why?
     file: understanding-maps/who-makes-maps-and-why.md
     primary_category: understanding-maps
-    categories: [understanding-maps, reading-maps-critically]
+    categories:
+      - understanding-maps
+      - reading-maps-critically
     status: structured-stub
     duration_minutes: 30
-
   - id: mapping-with-community-knowledge
-    title: "Mapping With Community Knowledge"
+    title: Mapping With Community Knowledge
     file: understanding-maps/mapping-with-community-knowledge.md
     primary_category: understanding-maps
-    categories: [understanding-maps, working-with-data, making-maps]
+    categories:
+      - understanding-maps
+      - working-with-data
+      - making-maps
     status: complete-draft
     duration_minutes: 40
-
   - id: read-map-anatomy
-    title: "Read the Anatomy of a Map"
+    title: Read the Anatomy of a Map
     file: reading-maps-critically/read-map-anatomy.md
     primary_category: reading-maps-critically
-    categories: [reading-maps-critically, understanding-maps]
+    categories:
+      - reading-maps-critically
+      - understanding-maps
     status: complete-draft
     duration_minutes: 25
-
   - id: read-public-data-dashboard
-    title: "Reading a Public Data Map or Dashboard"
+    title: Reading a Public Data Map or Dashboard
     file: reading-maps-critically/read-public-data-dashboard.md
     primary_category: reading-maps-critically
-    categories: [reading-maps-critically, working-with-data]
+    categories:
+      - reading-maps-critically
+      - working-with-data
     status: complete-draft
     duration_minutes: 35
-
   - id: maps-as-arguments
-    title: "Maps as Arguments"
+    title: Maps as Arguments
     file: reading-maps-critically/maps-as-arguments.md
     primary_category: reading-maps-critically
-    categories: [reading-maps-critically, understanding-maps]
+    categories:
+      - reading-maps-critically
+      - understanding-maps
     status: structured-stub
     duration_minutes: 30
-
   - id: scale-projection-distortion
-    title: "Scale Projection and Distortion"
+    title: Scale Projection and Distortion
     file: reading-maps-critically/scale-projection-distortion.md
     primary_category: reading-maps-critically
-    categories: [reading-maps-critically, understanding-maps, working-with-data]
+    categories:
+      - reading-maps-critically
+      - understanding-maps
+      - working-with-data
     status: structured-stub
     duration_minutes: 35
-
   - id: color-classification-hierarchy
-    title: "Color Classification and Visual Hierarchy"
+    title: Color Classification and Visual Hierarchy
     file: reading-maps-critically/color-classification-hierarchy.md
     primary_category: reading-maps-critically
-    categories: [reading-maps-critically, making-maps]
+    categories:
+      - reading-maps-critically
+      - making-maps
     status: complete-draft
     duration_minutes: 40
-
   - id: what-map-leaves-out
-    title: "What Does This Map Leave Out?"
+    title: What Does This Map Leave Out?
     file: reading-maps-critically/what-map-leaves-out.md
     primary_category: reading-maps-critically
-    categories: [reading-maps-critically, understanding-maps, working-with-data]
+    categories:
+      - reading-maps-critically
+      - understanding-maps
+      - working-with-data
     status: structured-stub
     duration_minutes: 25
-
   - id: start-mappable-question
-    title: "Start With a Mappable Question"
+    title: Start With a Mappable Question
     file: working-with-data/start-mappable-question.md
     primary_category: working-with-data
-    categories: [working-with-data, understanding-maps]
+    categories:
+      - working-with-data
+      - understanding-maps
     status: structured-stub
     duration_minutes: 25
-
   - id: find-data-for-question
-    title: "Find Data for Your Question"
+    title: Find Data for Your Question
     file: working-with-data/find-data-for-question.md
     primary_category: working-with-data
-    categories: [working-with-data]
+    categories:
+      - working-with-data
     status: structured-stub
     duration_minutes: 35
-
   - id: read-metadata-before-you-map
-    title: "Read the Metadata Before You Map"
+    title: Read the Metadata Before You Map
     file: working-with-data/read-metadata-before-you-map.md
     primary_category: working-with-data
-    categories: [working-with-data, reading-maps-critically]
+    categories:
+      - working-with-data
+      - reading-maps-critically
     status: complete-draft
     duration_minutes: 35
-
   - id: is-dataset-ready-to-map
-    title: "Is This Dataset Ready to Map?"
+    title: Is This Dataset Ready to Map?
     file: working-with-data/is-dataset-ready-to-map.md
     primary_category: working-with-data
-    categories: [working-with-data, making-maps]
+    categories:
+      - working-with-data
+      - making-maps
     status: complete-draft
     duration_minutes: 40
-
   - id: organize-spreadsheet-for-mapping
-    title: "Organize a Spreadsheet for Mapping"
+    title: Organize a Spreadsheet for Mapping
     file: working-with-data/organize-spreadsheet-for-mapping.md
     primary_category: working-with-data
-    categories: [working-with-data, making-maps]
+    categories:
+      - working-with-data
+      - making-maps
     status: complete-draft
     duration_minutes: 40
-
   - id: understand-geographic-units
-    title: "Understand Geographic Units and Boundaries"
+    title: Understand Geographic Units and Boundaries
     file: working-with-data/understand-geographic-units.md
     primary_category: working-with-data
-    categories: [working-with-data, reading-maps-critically]
+    categories:
+      - working-with-data
+      - reading-maps-critically
     status: structured-stub
     duration_minutes: 35
-
   - id: human-geography-data-for-scientists
-    title: "Human Geography Data for Physical Scientists"
+    title: Human Geography Data for Physical Scientists
     file: working-with-data/human-geography-data-for-scientists.md
     primary_category: working-with-data
-    categories: [working-with-data, understanding-maps, reading-maps-critically]
+    categories:
+      - working-with-data
+      - understanding-maps
+      - reading-maps-critically
     status: complete-draft
     duration_minutes: 45
-
   - id: census-acs-geography
-    title: "Census ACS and Geographic Boundaries"
+    title: Census ACS and Geographic Boundaries
     file: working-with-data/census-acs-geography.md
     primary_category: working-with-data
-    categories: [working-with-data]
+    categories:
+      - working-with-data
     status: structured-stub
     duration_minutes: 40
-
   - id: join-data-to-geography
-    title: "Join Data to Geography"
+    title: Join Data to Geography
     file: working-with-data/join-data-to-geography.md
     primary_category: working-with-data
-    categories: [working-with-data, making-maps]
+    categories:
+      - working-with-data
+      - making-maps
     status: complete-draft
     duration_minutes: 45
-
   - id: counts-rates-normalization
-    title: "Counts Rates and Fair Comparisons"
+    title: Counts Rates and Fair Comparisons
     file: working-with-data/counts-rates-normalization.md
     primary_category: working-with-data
-    categories: [working-with-data, reading-maps-critically]
+    categories:
+      - working-with-data
+      - reading-maps-critically
     status: structured-stub
     duration_minutes: 35
-
   - id: data-ownership-privacy-uncertainty
-    title: "Data Ownership Privacy and Uncertainty"
+    title: Data Ownership Privacy and Uncertainty
     file: working-with-data/data-ownership-privacy-uncertainty.md
     primary_category: working-with-data
-    categories: [working-with-data, understanding-maps, reading-maps-critically]
+    categories:
+      - working-with-data
+      - understanding-maps
+      - reading-maps-critically
     status: structured-stub
     duration_minutes: 35
-
   - id: choose-mapping-platform
-    title: "Choose a Mapping Platform"
+    title: Choose a Mapping Platform
     file: making-maps/choose-mapping-platform.md
     primary_category: making-maps
-    categories: [making-maps, working-with-data]
+    categories:
+      - making-maps
+      - working-with-data
     status: complete-draft
     duration_minutes: 25
-
   - id: first-map-in-qgis
-    title: "Make Your First Map in QGIS"
+    title: Make Your First Map in QGIS
     file: making-maps/first-map-in-qgis.md
     primary_category: making-maps
-    categories: [making-maps, working-with-data, reading-maps-critically]
+    categories:
+      - making-maps
+      - working-with-data
+      - reading-maps-critically
     status: complete-draft
     duration_minutes: 60
-
   - id: import-csv-qgis
-    title: "Import a CSV Into QGIS"
+    title: Import a CSV Into QGIS
     file: making-maps/import-csv-qgis.md
     primary_category: making-maps
-    categories: [making-maps, working-with-data]
+    categories:
+      - making-maps
+      - working-with-data
     status: structured-stub
     duration_minutes: 35
-
   - id: symbolize-classify-qgis
-    title: "Symbolize and Classify Data in QGIS"
+    title: Symbolize and Classify Data in QGIS
     file: making-maps/symbolize-classify-qgis.md
     primary_category: making-maps
-    categories: [making-maps, reading-maps-critically, working-with-data]
+    categories:
+      - making-maps
+      - reading-maps-critically
+      - working-with-data
     status: structured-stub
     duration_minutes: 45
-
   - id: export-share-map
-    title: "Export and Share a Map"
+    title: Export and Share a Map
     file: making-maps/export-share-map.md
     primary_category: making-maps
-    categories: [making-maps, reading-maps-critically]
+    categories:
+      - making-maps
+      - reading-maps-critically
     status: structured-stub
     duration_minutes: 30
-
   - id: first-map-arcgis-pro
-    title: "Make Your First Map in ArcGIS Pro"
+    title: Make Your First Map in ArcGIS Pro
     file: making-maps/first-map-arcgis-pro.md
     primary_category: making-maps
-    categories: [making-maps, working-with-data]
-    status: structured-stub
+    categories:
+      - making-maps
+      - working-with-data
+    status: complete-draft
     duration_minutes: 60
-
   - id: design-community-meeting-map
-    title: "Design a Map for a Community Meeting"
+    title: Design a Map for a Community Meeting
     file: making-maps/design-community-meeting-map.md
     primary_category: making-maps
-    categories: [making-maps, reading-maps-critically, understanding-maps]
+    categories:
+      - making-maps
+      - reading-maps-critically
+      - understanding-maps
     status: structured-stub
     duration_minutes: 40
-
   - id: cite-map-and-data
-    title: "Cite a Map and Its Data"
+    title: Cite a Map and Its Data
     file: making-maps/cite-map-and-data.md
     primary_category: making-maps
-    categories: [making-maps, working-with-data, reading-maps-critically]
+    categories:
+      - making-maps
+      - working-with-data
+      - reading-maps-critically
     status: structured-stub
     duration_minutes: 20
+  - id: intro-gis
+    title: What GIS Adds to a Map
+    file: understanding-maps/intro-gis.md
+    primary_category: understanding-maps
+    categories:
+      - understanding-maps
+    status: complete-draft
+    duration_minutes: 35
+  - id: map-purpose-and-technique
+    title: Choose a Map Type for Your Question
+    file: understanding-maps/map-purpose-and-technique.md
+    primary_category: understanding-maps
+    categories:
+      - understanding-maps
+    status: complete-draft
+    duration_minutes: 40
+  - id: mapping-power-and-ethics
+    title: Read Maps Through Power and Ethics
+    file: reading-maps-critically/mapping-power-and-ethics.md
+    primary_category: reading-maps-critically
+    categories:
+      - reading-maps-critically
+    status: complete-draft
+    duration_minutes: 40
+  - id: coordinate-systems-and-datums
+    title: Put Coordinates in Their Reference System
+    file: working-with-data/coordinate-systems-and-datums.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 40
+  - id: vector-and-raster
+    title: Choose Between Features and Cells
+    file: working-with-data/vector-and-raster.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35
+  - id: organize-gis-projects
+    title: Understand Projects, Maps, Layers, and Data
+    file: making-maps/organize-gis-projects.md
+    primary_category: making-maps
+    categories:
+      - making-maps
+    status: complete-draft
+    duration_minutes: 35
+  - id: manage-gis-files
+    title: Keep a GIS Project Portable
+    file: working-with-data/manage-gis-files.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35
+  - id: acquire-and-inspect-gis-data
+    title: Acquire and Inspect GIS Data
+    file: working-with-data/acquire-and-inspect-gis-data.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35
+  - id: tables-fields-and-calculations
+    title: Turn a Table into Geographic Features
+    file: working-with-data/tables-fields-and-calculations.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35
+  - id: select-by-attributes
+    title: Ask Questions with Attribute Queries
+    file: working-with-data/select-by-attributes.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35
+  - id: select-by-location
+    title: Ask Questions with Spatial Relationships
+    file: working-with-data/select-by-location.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35
+  - id: table-joins-and-relates
+    title: Choose a Table Join or a Relate
+    file: working-with-data/table-joins-and-relates.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35
+  - id: spatial-joins
+    title: Join Features by Location
+    file: working-with-data/spatial-joins.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35
+  - id: geoprocessing-workflows
+    title: Build a Geoprocessing Workflow
+    file: making-maps/geoprocessing-workflows.md
+    primary_category: making-maps
+    categories:
+      - making-maps
+    status: complete-draft
+    duration_minutes: 45
+  - id: raster-analysis
+    title: Read, Calculate, and Compare Raster Surfaces
+    file: making-maps/raster-analysis.md
+    primary_category: making-maps
+    categories:
+      - making-maps
+    status: complete-draft
+    duration_minutes: 45
+  - id: geospatial-programming
+    title: Move from GIS Clicks to Python
+    file: making-maps/geospatial-programming.md
+    primary_category: making-maps
+    categories:
+      - making-maps
+    status: complete-draft
+    duration_minutes: 45
+  - id: reproducible-spatial-workflows
+    title: Design a Reproducible Spatial Workflow
+    file: making-maps/reproducible-spatial-workflows.md
+    primary_category: making-maps
+    categories:
+      - making-maps
+    status: complete-draft
+    duration_minutes: 40
+  - id: future-of-gis
+    title: Evaluate Emerging Spatial Technologies
+    file: understanding-maps/future-of-gis.md
+    primary_category: understanding-maps
+    categories:
+      - understanding-maps
+    status: complete-draft
+    duration_minutes: 35
+  - id: shapefile-package
+    title: Understand a Shapefile Package
+    file: working-with-data/shapefile-package.md
+    primary_category: working-with-data
+    categories:
+      - working-with-data
+    status: complete-draft
+    duration_minutes: 35

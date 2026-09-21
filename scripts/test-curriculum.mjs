@@ -7,7 +7,7 @@ const root=fs.mkdtempSync(path.join(os.tmpdir(),'mapping-commons-validation-'));
 try {
   fs.cpSync('src/content',path.join(root,'src/content'),{recursive:true});
   fs.cpSync('src/curriculum',path.join(root,'src/curriculum'),{recursive:true});
-  assert.deepEqual(validateCurriculum(root),{lessons:29,pathways:4,drafts:12,planned:17});
+  assert.deepEqual(validateCurriculum(root),{lessons:48,pathways:4,drafts:32,planned:16});
   const lesson=path.join(root,'src/content/lessons/understanding-maps/what-counts-as-a-map.md');
   const duplicate=path.join(root,'src/content/lessons/duplicate.md');
   fs.copyFileSync(lesson,duplicate);assert.throws(()=>validateCurriculum(root),/Duplicate lesson ID/);fs.unlinkSync(duplicate);

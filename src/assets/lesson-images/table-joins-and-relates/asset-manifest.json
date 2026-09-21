@@ -1,0 +1,25 @@
+[
+  {
+    "id": "table-joins-and-relates-key-matches",
+    "file": "key-matches.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      3,
+      6,
+      7
+    ],
+    "source_deck": "tablejoin",
+    "function": "instructional diagram",
+    "description": "Regions 01, 02 and 03 connect to services 01/A, 01/B, 02/C and 04/D. Region 01 has two matches, 02 has one, 03 has none, and service D is unmatched.",
+    "alt_text": "Regions 01, 02 and 03 connect to services 01/A, 01/B, 02/C and 04/D. Region 01 has two matches, 02 has one, 03 has none, and service D is unmatched.",
+    "caption": "One key can connect to more than one record. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "8c280783cfb08bc692e953b35627fd365690c97a78e409ff37f9b6c47e560db2",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

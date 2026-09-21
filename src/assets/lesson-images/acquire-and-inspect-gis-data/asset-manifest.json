@@ -1,0 +1,27 @@
+[
+  {
+    "id": "acquire-and-inspect-gis-data-workflow",
+    "file": "workflow.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "source_deck": "data-management",
+    "function": "instructional diagram",
+    "description": "Find source → Read metadata → Acquire → Inspect → Record. A successful download is the beginning of the audit.",
+    "alt_text": "Find source → Read metadata → Acquire → Inspect → Record. A successful download is the beginning of the audit.",
+    "caption": "From a source to a usable layer. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "1a5d154790c5a3a7646ba27df97aba1c71ef6a8d191e8b2f507d63d13983c63b",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

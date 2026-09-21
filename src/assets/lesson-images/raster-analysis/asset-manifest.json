@@ -1,0 +1,23 @@
+[
+  {
+    "id": "raster-analysis-terrain-outputs",
+    "file": "terrain-outputs.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      6
+    ],
+    "source_deck": "raster-data-analysis",
+    "function": "instructional diagram",
+    "description": "An elevation grid can produce slope and aspect values, hillshade as simulated illumination, or contour lines of equal elevation. Contours are line features rather than necessarily a raster.",
+    "alt_text": "An elevation grid can produce slope and aspect values, hillshade as simulated illumination, or contour lines of equal elevation. Contours are line features rather than necessarily a raster.",
+    "caption": "One input can lead to different representations. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "ad94e7cf0e7f5524678da72abec21048368d73912d1009a10890925c3f8c1b98",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

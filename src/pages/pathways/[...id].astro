@@ -9,10 +9,17 @@ const {entry}=Astro.props;const d=entry.data;const {lessonById}=await curriculum
 ---
 <BaseLayout title={d.title} description={d.summary}>
   <a class="back-link" href={`${import.meta.env.BASE_URL}pathways/`}>← All pathways</a>
-  <header class="page-header"><p class="eyebrow">Pathway · {requiredMinutes(entry,lessonById)} required minutes · {readable(d.level)}</p><h1>{d.title}</h1><p class="lede">{d.summary}</p><p>For: {d.audiences.map(readable).join(', ')}</p></header>
-  <section class="lesson-meta" aria-labelledby="outcome"><h2 id="outcome">Where this takes you</h2><p>{d.outcome}</p>{d.example_case&&<p>Example case: {d.example_case}</p>}{d.course_example&&<p>Course example: {d.course_example}</p>}</section>
-  <p class="pilot-note">This pathway includes draft and planned lessons. Planned lessons show the intended sequence, not a finished tutorial. Optional steps add to the required time.</p>
-  <a class="pathway-start" href={pathwayLessonHref(entry.id,d.steps[0].lesson)}>Explore pathway →</a>
+  <article class="pathway-front-card" aria-labelledby="pathway-title">
+    <p class="eyebrow">Pathway · {requiredMinutes(entry,lessonById)} required minutes · {readable(d.level)}</p>
+    <h1 id="pathway-title">{d.title}</h1>
+    <p class="pathway-designer">Designed by: {d.designers.length?d.designers.join(', '):'Credit to be added'}</p>
+    <section><h2>Why this pathway</h2><p>{d.purpose || d.summary}</p></section>
+    <section><h2>Who it is for</h2><p>{d.audiences.map(readable).join(', ')}</p></section>
+    <section><h2>What you will make</h2><p>{d.outcome}</p>{d.example_case&&<p>Example case: {d.example_case}</p>}{d.course_example&&<p>Course example: {d.course_example}</p>}</section>
+    <section class="pathway-front-resources"><h2>Resources</h2>{d.resources.length?<ul>{d.resources.map(r=><li><a href={r.url}>{r.title}</a>{r.description&&<p>{r.description}</p>}</li>)}</ul>:<p>Resources will be added here.</p>}</section>
+    <p class="small">This pathway includes draft and planned lessons. Optional lessons add to the required time.</p>
+    <a class="pathway-start" href={pathwayLessonHref(entry.id,d.steps[0].lesson)}>Begin pathway →</a>
+  </article>
   <PathwaySequence pathway={entry} lessonById={lessonById} />
   <section aria-labelledby="sequence"><h2 id="sequence">Your learning sequence</h2><ol class="steps">{d.steps.map(step=>{const lesson=lessonById.get(step.lesson)!;return <li><p class="eyebrow">{step.required?'Required':'Optional'} · {statusLabels[lesson.data.status]} · {lesson.data.duration_minutes} minutes</p><h3><a href={pathwayLessonHref(entry.id,lesson.id)}>{lesson.data.title}</a></h3><p><strong>{step.label}</strong></p><p>{step.note}</p></li>;})}</ol></section>
 </BaseLayout>

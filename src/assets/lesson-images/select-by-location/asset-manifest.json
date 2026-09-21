@@ -1,0 +1,24 @@
+[
+  {
+    "id": "select-by-location-boundary-cases",
+    "file": "boundary-cases.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      31,
+      33
+    ],
+    "source_deck": "gisc-attribute-location-queries-v9",
+    "function": "instructional diagram",
+    "description": "A fictional rectangle contains one point; a second point lies exactly on the right boundary and a third is outside. Whether the boundary point matches depends on the chosen predicate.",
+    "alt_text": "A fictional rectangle contains one point; a second point lies exactly on the right boundary and a third is outside. Whether the boundary point matches depends on the chosen predicate.",
+    "caption": "Test the boundary, not only the easy cases. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "7e071ecdab935a0a348eb88c4d982fb60f30263b179fed7d4324eafc53da1cc6",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

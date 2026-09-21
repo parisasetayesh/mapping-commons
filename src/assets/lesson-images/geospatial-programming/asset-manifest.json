@@ -1,0 +1,27 @@
+[
+  {
+    "id": "geospatial-programming-workflow",
+    "file": "workflow.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      18,
+      19,
+      27,
+      28,
+      29
+    ],
+    "source_deck": "geospatial-programming-intro",
+    "function": "instructional diagram",
+    "description": "Inspect → Validate → Try one → Check → Repeat. A loop repeats assumptions as efficiently as it repeats instructions.",
+    "alt_text": "Inspect → Validate → Try one → Check → Repeat. A loop repeats assumptions as efficiently as it repeats instructions.",
+    "caption": "Inspect before repeating. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 3",
+    "sha256": "6d4757c3ffcb4c7cffc1ebfd9474f12109aff620c190cc5b7c9622ff7fac8547",
+    "step": 3,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

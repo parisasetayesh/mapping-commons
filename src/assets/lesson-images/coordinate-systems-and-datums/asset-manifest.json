@@ -1,0 +1,21 @@
+[
+  {
+    "id": "coordinate-systems-and-datums-coordinate-signs",
+    "file": "coordinate-signs.jpeg",
+    "original_file": "ppt/media/image5.jpeg",
+    "slide": 4,
+    "source_deck": "data-management-old-one",
+    "function": "instructional example",
+    "description": "A world diagram shows positive longitude east, negative longitude west, positive latitude north, and negative latitude south.",
+    "alt_text": "A world diagram shows positive longitude east, negative longitude west, positive latitude north, and negative latitude south.",
+    "caption": "Coordinate-sign diagram from the earlier data-management deck. Use the equator and prime meridian to check signs, not precise positions.",
+    "credit": "Lesson source: Shokran Rahiminejad. Coordinate-sign diagram from the earlier data-management deck. Use the equator and prime meridian to check signs, not precise positions.",
+    "rights_status": "unknown",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Uncropped packaged source; retain original legend and credits.",
+    "lesson_placement": "Step 1",
+    "step": 1,
+    "sha256": "21436f0ecaa7f07b340a3905f25e944fd87db451cac5f182a0f8f674691a2fe9",
+    "adaptation": "Original underlying image retained, separate from the dark slide template."
+  }
+]

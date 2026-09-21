@@ -1,0 +1,23 @@
+[
+  {
+    "id": "manage-gis-files-project-folder",
+    "file": "project-folder.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      8
+    ],
+    "source_deck": "file-types-management-troubleshooting",
+    "function": "instructional diagram",
+    "description": "A working parent folder connects to Sources, Working data, Outputs, and Documentation. Originals are preserved and a consistent backup is tested.",
+    "alt_text": "A working parent folder connects to Sources, Working data, Outputs, and Documentation. Originals are preserved and a consistent backup is tested.",
+    "caption": "A folder structure with a purpose. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 2",
+    "sha256": "666c18434c3c6aea0db517f343701f61d27dc484fbb774e7725bfa5826da5508",
+    "step": 2,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

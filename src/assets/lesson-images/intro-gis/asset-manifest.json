@@ -1,0 +1,25 @@
+[
+  {
+    "id": "intro-gis-workflow",
+    "file": "workflow.svg",
+    "original_file": "Native slide shapes and text",
+    "slide": [
+      3,
+      29,
+      30
+    ],
+    "source_deck": "introduction-to-gis",
+    "function": "instructional diagram",
+    "description": "Question → Data → Inspect → Analyze → Communicate. Return to the question when the evidence does not support the claim.",
+    "alt_text": "Question → Data → Inspect → Analyze → Communicate. Return to the question when the evidence does not support the claim.",
+    "caption": "A question becomes a geographic investigation. Light-background diagram adapted from the source’s editable teaching sequence.",
+    "credit": "Lesson source: Shokran Rahiminejad. Diagram redrawn for Mapping Commons.",
+    "rights_status": "adapted-source-review",
+    "publication_status": "local-review-only",
+    "crop_guidance": "Retain full diagram and labels.",
+    "lesson_placement": "Step 1",
+    "sha256": "ef22f94dfaf094f6942a61e7649e7ba6d4733adb0720a7b6dfcf7e43e5361413",
+    "step": 1,
+    "adaptation": "Native SVG reconstruction of concepts; no raster source altered; source deck retained."
+  }
+]

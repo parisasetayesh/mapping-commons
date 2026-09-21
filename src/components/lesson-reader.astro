@@ -1,0 +1,116 @@
+---
+interface Props { headings: {depth:number; slug:string; text:string}[] }
+const {headings}=Astro.props;
+---
+<div class="reader-layout">
+<div class="lesson-reader">
+  <button class="reader-toggle" hidden aria-expanded="false" aria-controls="reader-step-navigation" aria-label="Expand lesson steps"><span class="reader-rail" aria-hidden="true"></span></button>
+  <details class="reader-fallback"><summary>In this lesson</summary><nav aria-label="Lesson contents"><ol>{headings.filter(h=>h.depth===2).map(h=><li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol></nav></details>
+  <div class="reader-drawer" id="reader-step-navigation" hidden aria-labelledby="reader-menu-title"><button class="reader-close">Close ×</button><h2 id="reader-menu-title">In this lesson</h2><nav aria-label="Lesson sections"><ol></ol></nav></div>
+  <div class="reader-sheet"><div class="reader-content"><slot /></div><nav class="reader-controls" aria-label="Read lesson sections" hidden><button class="reader-previous">← Previous</button><span class="reader-position" aria-live="polite"></span><button class="reader-next">Next →</button></nav></div>
+</div>
+<aside class="reader-examples" aria-labelledby="reader-examples-title"><slot name="examples"><h2 id="reader-examples-title">Also see</h2><span class="reader-examples-placeholder">Placeholder</span></slot></aside>
+</div>
+<script>
+  const reader=document.querySelector<HTMLElement>('.lesson-reader');
+  if(reader) {
+    const prose=reader.querySelector<HTMLElement>('.prose')!;
+    prose.querySelectorAll('table').forEach(table=>{table.tabIndex=0;table.setAttribute('aria-label','Lesson table; scroll horizontally on small screens');});
+    prose.querySelectorAll<HTMLImageElement>('img').forEach(img=>{
+      if(img.closest('a'))return;
+      const link=document.createElement('a');link.className='reader-image-link';
+      link.href=img.currentSrc||img.src;link.target='_blank';link.rel='noopener';
+      link.setAttribute('aria-label',`Open full-size image in a new tab: ${img.alt}`);
+      img.replaceWith(link);link.append(img);
+      const label=document.createElement('span');label.textContent='Open image at full size ↗';link.append(label);
+    });
+    const intro=reader.querySelector<HTMLElement>('.reader-intro')!;
+    const drawer=reader.querySelector<HTMLElement>('.reader-drawer')!;
+    const toggle=reader.querySelector<HTMLButtonElement>('.reader-toggle')!;
+    const previous=reader.querySelector<HTMLButtonElement>('.reader-previous')!;
+    const next=reader.querySelector<HTMLButtonElement>('.reader-next')!;
+    const sections:HTMLElement[]=[];
+    let section=document.createElement('section');
+    section.className='reader-section';
+    const hasOverview=!!intro.querySelector('#reader-overview');
+    if(hasOverview) { section.append(intro); sections.push(section); }
+    let firstHeading=true;
+    for(const node of Array.from(prose.childNodes)) {
+      if(node instanceof HTMLElement&&node.tagName==='H2') {
+        if(!firstHeading||hasOverview) { section=document.createElement('section'); section.className='reader-section'; }
+        if(!sections.includes(section))sections.push(section);
+        firstHeading=false;
+      }
+      section.append(node);
+    }
+    if(!sections.length)sections.push(section);
+    // Keep the opening rationale on the lesson card, retaining its original anchor.
+    const rationale=sections.findIndex((s,i)=>i>0&&/^why this matters$/i.test(s.querySelector('h2')?.textContent?.trim()||''));
+    if(rationale>0) {
+      sections[0].append(...Array.from(sections[rationale].childNodes));
+      sections.splice(rationale,1);
+    }
+    sections.forEach((s,i)=>{
+      const title=s.querySelector('h2')?.textContent?.trim()||'';
+      s.dataset.readerKind=i===0?'card':/^(?:planned )?checkpoint$|^key takeaway(?:s)?$/i.test(title)?'card':/^critical pause$/i.test(title)?'pause':'reading';
+    });
+    prose.append(...sections);
+    if(!hasOverview) sections[0].prepend(intro);
+    const ending=document.createElement('section'); ending.className='reader-section';
+    const endingTitle=document.createElement('h2'); endingTitle.id='lesson-credits'; endingTitle.textContent='Credits and next lessons'; ending.append(endingTitle);
+    reader.querySelectorAll('.pathway-reading-nav,.related,.lesson-footer').forEach(el=>ending.append(el));
+    prose.append(ending); sections.push(ending);
+    const headings=sections.map((s,i)=>{const h=s.querySelector<HTMLElement>('h2')!; if(!h.id)h.id=`lesson-section-${i}`;h.tabIndex=-1;return h;});
+    // Metadata headings are inside a disclosure; the visible overview is the reader target.
+    headings[0]=sections[0].querySelector<HTMLElement>('#at-a-glance,#reader-overview')||headings[0];
+    headings[0].tabIndex=-1;
+    sections[0].prepend(headings[0]);
+    const preparation=intro.querySelector('.reader-preparation');
+    if(preparation)sections[0].append(preparation);
+    const list=drawer.querySelector('ol')!;
+    const rail=toggle.querySelector('.reader-rail')!;
+    headings.forEach((h,i)=>{
+      const kind=sections[i].dataset.readerKind||'reading';
+      const segment=document.createElement('span');segment.className='reader-segment';segment.dataset.kind=kind;rail.append(segment);
+      const li=document.createElement('li');const a=document.createElement('a');a.href=`#${h.id}`;
+      const mark=segment.cloneNode() as HTMLElement;mark.setAttribute('aria-hidden','true');
+      const label=document.createElement('span');label.textContent=h.textContent;
+      a.append(mark,label);li.append(a);list.append(li);
+    });
+    let current=0;
+    function show(index:number,focus=false) {
+      current=index;
+      reader!.dataset.readerKind=sections[index].dataset.readerKind||'reading';
+      sections.forEach((s,i)=>s.hidden=i!==current);
+      previous.disabled=current===0;next.disabled=current===sections.length-1;
+      next.textContent=current===0?'Begin lesson →':current===sections.length-1?'End of lesson':'Next →';
+      reader!.querySelector('.reader-position')!.textContent=`${current+1} / ${sections.length}`;
+      rail.querySelectorAll<HTMLElement>('.reader-segment').forEach((s,i)=>s.dataset.current=String(i===current));
+      toggle.setAttribute('aria-label',`Expand lesson steps: ${headings[current].textContent}, section ${current+1} of ${sections.length}`);
+      list.querySelectorAll('a').forEach((a,i)=>{if(i===current)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
+      if(focus){headings[current].focus({preventScroll:true});reader!.scrollIntoView({block:'start'});}
+    }
+    function fromHash(focus=false){let id='';try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}const target=id?document.getElementById(id):null;const index=target?sections.findIndex(s=>s.contains(target)):0;if(index>=0){show(index,focus);if(target) {let parent=target.parentElement;while(parent&&parent!==sections[index]){if(parent instanceof HTMLDetailsElement)parent.open=true;parent=parent.parentElement;}}}}
+    function navigate(index:number){history.pushState(null,'',`#${headings[index].id}`);show(index,true);}
+    previous.addEventListener('click',()=>navigate(Math.max(0,current-1)));
+    next.addEventListener('click',()=>navigate(Math.min(sections.length-1,current+1)));
+    toggle.hidden=false;
+    function closeSteps(restoreFocus=true){drawer.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label',toggle.getAttribute('aria-label')!.replace(/^Collapse/,'Expand'));if(restoreFocus)toggle.focus();}
+    toggle.addEventListener('click',()=>{
+      if(!drawer.hidden){closeSteps();return;}
+      drawer.hidden=false;toggle.setAttribute('aria-expanded','true');toggle.setAttribute('aria-label',toggle.getAttribute('aria-label')!.replace(/^Expand/,'Collapse'));
+      (list.querySelector('[aria-current]') as HTMLElement)?.focus();
+    });
+    reader.querySelector('.reader-close')!.addEventListener('click',()=>closeSteps());
+    reader.addEventListener('keydown',e=>{if(e.key==='Escape'&&!drawer.hidden){e.preventDefault();closeSteps();}});
+    document.addEventListener('click',e=>{if(!drawer.hidden&&!drawer.contains(e.target as Node)&&!toggle.contains(e.target as Node))closeSteps(false);});
+    list.addEventListener('click',e=>{const a=(e.target as HTMLElement).closest('a');if(a){e.preventDefault();const index=Array.from(list.querySelectorAll('a')).indexOf(a);closeSteps(false);navigate(index);}});
+    window.addEventListener('hashchange',()=>fromHash(true));
+    window.addEventListener('popstate',()=>fromHash(true));
+    reader.querySelector<HTMLElement>('.reader-fallback')!.hidden=true;
+    reader.querySelector<HTMLElement>('.reader-controls')!.hidden=false;
+    reader.classList.add('is-enhanced');
+    show(0);
+    fromHash();
+  }
+</script>
