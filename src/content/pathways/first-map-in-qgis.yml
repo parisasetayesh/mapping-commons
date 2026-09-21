@@ -1,0 +1,57 @@
+id: first-map-in-qgis
+title: "Make Your First Map in QGIS"
+summary: "Move from a mapping question and prepared dataset to a readable exported map using an open-source desktop GIS workflow."
+audiences:
+  - undergraduate-students
+  - graduate-students
+  - researchers
+  - community-organizations
+level: beginner
+estimated_minutes: 250
+outcome: "A documented and exported QGIS map with appropriate data, symbology, source credit, and a short limitations statement."
+
+steps:
+  - lesson: start-mappable-question
+    label: "Define the map's purpose"
+    required: true
+    note: "State the question, intended audience, and intended use before opening software."
+
+  - lesson: is-dataset-ready-to-map
+    label: "Check the data"
+    required: true
+    note: "Verify structure, location fields, identifiers, documentation, and cleaning needs."
+
+  - lesson: choose-mapping-platform
+    label: "Confirm QGIS is appropriate"
+    required: true
+    note: "Match the workflow to the project's data, output, installation, and access requirements."
+
+  - lesson: first-map-in-qgis
+    label: "Build the first map"
+    required: true
+    note: "Learn the interface, add a layer, inspect attributes, style the map, and save the project."
+
+  - lesson: import-csv-qgis
+    label: "Add spreadsheet data"
+    required: false
+    note: "Use when the project begins with coordinates or another tabular location field."
+
+  - lesson: join-data-to-geography
+    label: "Join attributes to boundaries"
+    required: false
+    note: "Use when the dataset and geographic file share an identifier."
+
+  - lesson: symbolize-classify-qgis
+    label: "Choose a meaningful visual encoding"
+    required: true
+    note: "Select symbols, normalization, classes, color, and hierarchy based on the data and question."
+
+  - lesson: export-share-map
+    label: "Export for the intended audience"
+    required: true
+    note: "Create a layout, add source information, and export an accessible file."
+
+  - lesson: what-map-leaves-out
+    label: "Evaluate the result"
+    required: true
+    note: "Identify what the finished map makes visible and what remains outside it."

@@ -1,0 +1,6 @@
+---
+import { domains } from '../lib/content';
+interface Props { domain: string; }
+const { domain } = Astro.props;
+---
+<span class="domain-label"><span class="category-square" data-domain={domain} aria-hidden="true"></span><span>{domains[domain]}</span></span>

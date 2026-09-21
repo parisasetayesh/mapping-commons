@@ -1,0 +1,12 @@
+---
+import { curriculum, domains } from '../../lib/content';
+import LessonList from '../../components/lesson-list.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export function getStaticPaths(){return Object.keys(domains).map(category=>({params:{category}}));}
+const category=Astro.params.category!;
+const { lessons }=await curriculum();
+const matches=lessons.filter(lesson=>lesson.data.categories.includes(category as typeof lesson.data.primary_category));
+---
+<BaseLayout title={domains[category]}>
+  <LessonList lessons={matches} category={category} />
+</BaseLayout>

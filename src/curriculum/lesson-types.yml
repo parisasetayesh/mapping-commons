@@ -1,0 +1,37 @@
+version: 0.1
+
+lesson_types:
+  - id: concept
+    title: Concept lesson
+    typical_sequence: [encounter, understand, compare, apply, reflect]
+
+  - id: critical-reading
+    title: Critical map reading
+    typical_sequence: [observe, decode, question, contextualize, interpret]
+
+  - id: data-workflow
+    title: Data workflow
+    typical_sequence: [frame, find, inspect, test, document]
+
+  - id: technical-workflow
+    title: Technical workflow
+    typical_sequence: [prepare, build, troubleshoot, export, evaluate]
+
+  - id: community-practice
+    title: Community practice
+    typical_sequence: [gather, discuss, represent, negotiate, reflect]
+
+  - id: behind-the-map
+    title: Behind the Map case study
+    typical_sequence: [question, actors, data, choices, compromises, outcome, omissions]
+
+statuses:
+  - id: complete-draft
+    public_label: Draft lesson
+  - id: structured-stub
+    public_label: Planned lesson
+  - id: reviewed
+    public_label: Reviewed lesson
+  - id: classroom-tested
+    public_label: Classroom-tested lesson
+

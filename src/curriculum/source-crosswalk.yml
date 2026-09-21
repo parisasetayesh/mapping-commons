@@ -1,0 +1,213 @@
+version: 0.1
+note: "Seed sources drawn from the Mapping Commons resource database. Links should be audited before public launch."
+
+sources:
+  - id: src-mapping-society-technology
+    title: "Mapping, Society, and Technology"
+    type: open-textbook
+    url: https://open.lib.umn.edu/mapping/
+    supports: [what-counts-as-a-map, maps-as-selective-representations, who-makes-maps-and-why]
+
+  - id: src-introduction-cartography-openalg
+    title: "Introduction to Cartography"
+    type: oer-module
+    url: https://alg.manifoldapp.org/read/introduction-to-cartography
+    supports: [what-counts-as-a-map, read-map-anatomy]
+
+  - id: src-critical-cartography
+    title: "An Introduction to Critical Cartography"
+    type: open-access-article
+    url: https://acme-journal.org/index.php/acme/article/view/723/585
+    supports: [who-makes-maps-and-why, maps-as-arguments, what-map-leaves-out]
+
+  - id: src-participatory-mapping-ifad
+    title: "Good Practices in Participatory Mapping"
+    type: toolkit
+    url: https://www.ifad.org/documents/38714170/39144386/PM_web.pdf/7c1eda69-8205-4c31-8912-3c25d6f90055
+    supports: [mapping-with-community-knowledge, design-community-meeting-map]
+
+  - id: src-community-mapping-iapad
+    title: "A Guide to Using Community Mapping and Participatory GIS"
+    type: toolkit
+    url: https://www.iapad.org/wp-content/uploads/2015/07/Borderlands-Community-Mapping-Guide.pdf
+    supports: [mapping-with-community-knowledge]
+
+  - id: src-making-effective-maps
+    title: "Making Effective Maps"
+    type: open-textbook
+    url: https://colorado.pressbooks.pub/makingmaps/
+    supports: [read-map-anatomy, color-classification-hierarchy, symbolize-classify-qgis, export-share-map]
+
+  - id: src-scale-projections
+    title: "Scale and Projections"
+    type: open-textbook-chapter
+    url: https://open.lib.umn.edu/mapping/chapter/3-scale-and-projections/
+    supports: [scale-projection-distortion, understand-geographic-units]
+
+  - id: src-lying-with-maps
+    title: "Lying With Maps"
+    type: open-textbook-chapter
+    url: https://open.lib.umn.edu/mapping/chapter/7-lying-with-maps/
+    supports: [read-public-data-dashboard, maps-as-arguments, what-map-leaves-out]
+
+  - id: src-nyc-open-data-how-to
+    title: "NYC Open Data How To"
+    type: portal-tutorial
+    url: https://opendata.cityofnewyork.us/how-to/
+    supports: [find-data-for-question, read-public-data-dashboard]
+
+  - id: src-metadata-for-all
+    title: "Metadata for All Guide"
+    type: documentation-guide
+    url: https://opendata.cityofnewyork.us/wp-content/uploads/2018/12/Metadata-for-All-Guide-for-Open-Data-Coordinators.pdf
+    supports: [read-metadata-before-you-map, is-dataset-ready-to-map]
+
+  - id: src-open-data-quality
+    title: "NYC Open Data Quality Standards and Review Process"
+    type: standards-guide
+    url: https://opendata.cityofnewyork.us/wp-content/uploads/OpenDataQualityStandards_Review-Process.pdf
+    supports: [read-metadata-before-you-map, is-dataset-ready-to-map, data-ownership-privacy-uncertainty]
+
+  - id: src-data-carpentry-spreadsheets
+    title: "Data Organization in Spreadsheets"
+    type: workshop-lesson
+    url: https://datacarpentry.github.io/spreadsheet-ecology-lesson/
+    supports: [is-dataset-ready-to-map, organize-spreadsheet-for-mapping]
+
+  - id: src-census-mapping-files
+    title: "Census Mapping Files"
+    type: dataset-guide
+    url: https://www.census.gov/geographies/mapping-files.html
+    supports: [human-geography-data-for-scientists, census-acs-geography, join-data-to-geography]
+
+  - id: src-tiger-line
+    title: "TIGER Line Shapefiles"
+    type: dataset-guide
+    url: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+    supports: [human-geography-data-for-scientists, census-acs-geography, join-data-to-geography]
+
+  - id: src-geoid-guide
+    title: "Understanding Geographic Identifiers"
+    type: reference-guide
+    url: https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html
+    supports: [census-acs-geography, join-data-to-geography]
+
+  - id: src-acs-tiger-join
+    title: "Joining ACS Summary Files to TIGER Line Shapefiles"
+    type: technical-guide
+    url: https://www2.census.gov/programs-surveys/acs/summary_file/2015/documentation/tech_docs/ACS_SF_TIGERLine_Shapefiles.pdf
+    supports: [human-geography-data-for-scientists, join-data-to-geography]
+
+  - id: src-qgis-training
+    title: "QGIS Training Manual"
+    type: training-manual
+    url: https://docs.qgis.org/latest/en/docs/training_manual/index.html
+    supports: [first-map-in-qgis, import-csv-qgis, symbolize-classify-qgis, export-share-map]
+
+  - id: src-qgis-basic-map
+    title: "Creating and Exploring a Basic Map"
+    type: tutorial-module
+    url: https://docs.qgis.org/latest/en/docs/training_manual/basic_map/index.html
+    supports: [first-map-in-qgis]
+
+  - id: src-qgis-csv
+    title: "Importing Spreadsheets or CSV Files in QGIS"
+    type: tutorial
+    url: https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html
+    supports: [first-map-in-qgis, import-csv-qgis]
+
+  - id: src-qgis-joins
+    title: "Performing Table Joins in QGIS"
+    type: tutorial
+    url: https://www.qgistutorials.com/en/docs/3/performing_table_joins.html
+    supports: [first-map-in-qgis, join-data-to-geography]
+
+  - id: src-qgis-crs
+    title: "Coordinate Reference Systems A Gentle Introduction"
+    type: documentation
+    url: https://docs.qgis.org/latest/en/docs/gentle_gis_introduction/coordinate_reference_systems.html
+    supports: [first-map-in-qgis, understand-geographic-units]
+
+  - id: src-finding-right-tools
+    title: "Finding the Right Tools for Mapping"
+    type: guide
+    url: https://gcdi.commons.gc.cuny.edu/2019/06/03/finding-the-right-tools-for-mapping-2/
+    supports: [choose-mapping-platform]
+
+  - id: src-forest-peoples-participatory-mapping
+    title: "Participatory Mapping: Guidelines for Communities and Organizations"
+    type: toolkit
+    url: https://www.forestpeoples.org/fileadmin/uploads/fpp/migration/documents/Guidelines%20for%20mapping.pdf
+    supports: [mapping-with-community-knowledge]
+
+  - id: src-co-creating-geovisual-stories
+    title: "Co-Creating Interactive Geo-Visual Stories"
+    type: facilitation-guide
+    url: https://fullstackfeminismdh.pubpub.org/pub/fhltccp0
+    supports: [mapping-with-community-knowledge, design-community-meeting-map]
+
+  - id: src-cartographic-design-process
+    title: "Cartographic Design Process"
+    type: open-textbook-chapter
+    url: https://colorado.pressbooks.pub/makingmaps/chapter/cartographic-design-process/
+    supports: [read-map-anatomy, color-classification-hierarchy]
+
+  - id: src-visual-variables
+    title: "Visual Variables"
+    type: open-textbook-chapter
+    url: https://colorado.pressbooks.pub/makingmaps/chapter/chapter-4-visual-variables/
+    supports: [color-classification-hierarchy]
+
+  - id: src-color-on-maps
+    title: "Color on Maps"
+    type: open-textbook-chapter
+    url: https://colorado.pressbooks.pub/makingmaps/chapter/chapter-6-color-on-maps/
+    supports: [color-classification-hierarchy]
+
+  - id: src-choropleth-design
+    title: "Design Choropleth Maps"
+    type: tutorial-path
+    url: https://learn.arcgis.com/en/paths/design-choropleth-maps/
+    supports: [color-classification-hierarchy, counts-rates-normalization]
+
+  - id: src-gcdi-organize-data
+    title: "How to Organize Data for Maps"
+    type: guide
+    url: https://gcdi.commons.gc.cuny.edu/2022/11/21/how-to-organize-data-for-maps/
+    supports: [organize-spreadsheet-for-mapping]
+
+  - id: src-qgis-joins-documentation
+    title: "QGIS Documentation: Joins and Relations"
+    type: documentation
+    url: https://docs.qgis.org/latest/en/docs/user_manual/working_with_vector/joins_relations.html
+    supports: [join-data-to-geography]
+
+  - id: src-storymaps-get-started
+    title: "Get Started with ArcGIS StoryMaps"
+    type: tutorial
+    url: https://learn.arcgis.com/en/projects/get-started-with-arcgis-storymaps/
+    supports: [choose-mapping-platform]
+
+  - id: src-leaflet-quick-start
+    title: "Leaflet Quick Start Guide"
+    type: documentation
+    url: https://leafletjs.com/examples/quick-start/
+    supports: [choose-mapping-platform]
+
+  - id: src-r-leaflet
+    title: "Leaflet for R"
+    type: documentation
+    url: https://rstudio.github.io/leaflet/
+    supports: [choose-mapping-platform]
+
+  - id: src-earth-engine-get-started
+    title: "Get Started with Earth Engine"
+    type: documentation
+    url: https://developers.google.com/earth-engine/guides/getstarted
+    supports: [choose-mapping-platform]
+
+  - id: src-learnosm-beginner
+    title: "LearnOSM Beginner's Guide"
+    type: tutorial-guide
+    url: https://learnosm.org/en/beginner/
+    supports: [choose-mapping-platform]

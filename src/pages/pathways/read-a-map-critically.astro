@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const destination=`${import.meta.env.BASE_URL}pathways/`;
+---
+<BaseLayout title="Pathways have moved">
+  <Fragment slot="head"><meta http-equiv="refresh" content={`0;url=${destination}`} /></Fragment>
+  <h1>Explore the example pathways</h1>
+  <p>The earlier pilot sequence has been replaced by the Expo curriculum.</p>
+  <p><a href={destination}>Continue to pathways</a></p>
+</BaseLayout>

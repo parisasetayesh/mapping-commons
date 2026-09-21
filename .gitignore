@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+
+# Internal research evidence must not enter the public repository.
+references/originals/
+.env
+.env.*
+
+lesson-intake/
+archive/

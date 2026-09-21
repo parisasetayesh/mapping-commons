@@ -1,0 +1,31 @@
+version: 0.1
+
+cross_listing:
+  enabled: true
+  rule: "Each lesson has one primary category and may be listed in additional categories."
+
+categories:
+  - id: understanding-maps
+    title: Understanding Maps
+    short_action: Understand maps
+    description: "Explore what maps are, how they represent the world, who produces them, and how mapping works as a social and community process."
+    color_token: category-understanding
+
+  - id: reading-maps-critically
+    title: Reading Maps Critically
+    short_action: Read maps
+    description: "Interpret symbols, scale, classification, projection, interface choices, arguments, omissions, and accessibility."
+    color_token: category-reading
+
+  - id: working-with-data
+    title: Working with Data
+    short_action: Work with data
+    description: "Find, evaluate, prepare, document, organize, connect, and question data used in mapping."
+    color_token: category-data
+
+  - id: making-maps
+    title: Making Maps
+    short_action: Make maps
+    description: "Choose a mapping workflow and build, style, export, and share maps using appropriate platforms."
+    color_token: category-making
+

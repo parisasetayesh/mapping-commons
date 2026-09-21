@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MapMark from '../components/map-mark.astro';
+import { domains } from '../lib/content';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Start" description="Maps shape meaning. An open commons for learning and teaching mapping." home>
+  <section class="cover" aria-labelledby="cover-title">
+    <MapMark class="cover-mark" />
+    <h1 id="cover-title">Maps shape meaning.</h1>
+  </section>
+  <nav class="home-entrances" aria-label="Learn or teach mapping">
+    <a class="home-entrance" href={`${base}lessons/`}>
+      <span class="entrance-title">Learn Mapping <span aria-hidden="true">↗</span></span>
+      <span class="entrance-note">Explore the lessons.</span>
+    </a>
+    <a class="home-entrance" href={`${base}pathways/`}>
+      <span class="entrance-title">Teach Mapping <span aria-hidden="true">↗</span></span>
+      <span class="entrance-note">Find a pathway for your class or workshop.</span>
+    </a>
+  </nav>
+  <section class="category-key" aria-labelledby="category-heading">
+    <h2 id="category-heading">Lesson categories</h2>
+    <ul>{Object.keys(domains).map(domain => <li><a data-domain={domain} href={`${base}categories/${domain}/`}>{domains[domain]}</a></li>)}</ul>
+  </section>
+</BaseLayout>

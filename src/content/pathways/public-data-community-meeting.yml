@@ -1,0 +1,43 @@
+id: public-data-community-meeting
+title: "Use a Public Data Map in a Community Meeting"
+summary: "Learn to interpret, question, and facilitate discussion around a public data map or dashboard, using flood information as the initial case."
+audiences:
+  - community-organizations
+  - public-agency-partners
+  - researchers
+  - educators
+level: beginner
+estimated_minutes: 210
+outcome: "An accessible meeting plan that explains what a public map shows, identifies its limits, and creates room for community knowledge."
+example_case: "FloodNet or another public environmental monitoring dashboard"
+
+steps:
+  - lesson: read-public-data-dashboard
+    label: "Read the public map"
+    required: true
+    note: "Identify the dashboard's purpose, controls, legend, time period, and geographic unit."
+
+  - lesson: read-metadata-before-you-map
+    label: "Understand the measurements"
+    required: true
+    note: "Translate field definitions, sources, collection methods, and update schedules into plain language."
+
+  - lesson: what-map-leaves-out
+    label: "Identify limits and omissions"
+    required: true
+    note: "Ask what the map cannot show and which experiences remain outside its data model."
+
+  - lesson: data-ownership-privacy-uncertainty
+    label: "Ask who controls the data"
+    required: true
+    note: "Examine ownership, uncertainty, access, and responsible public interpretation."
+
+  - lesson: mapping-with-community-knowledge
+    label: "Bring community knowledge into the room"
+    required: true
+    note: "Treat participant observations as knowledge rather than only as reactions to an authoritative map."
+
+  - lesson: design-community-meeting-map
+    label: "Prepare the meeting version"
+    required: true
+    note: "Adapt the material for projection, print, phones, plain-language explanation, and facilitated discussion."

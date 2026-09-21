@@ -1,0 +1,12 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import LessonPage from '../../../components/lesson-page.astro';
+import { curriculum } from '../../../lib/content';
+export async function getStaticPaths(){
+  const {pathways,lessonById}=await curriculum();
+  return pathways.flatMap(pathway=>pathway.data.steps.map(step=>({params:{pathway:pathway.id,lesson:step.lesson},props:{pathway,entry:lessonById.get(step.lesson)!}})));
+}
+interface Props { entry: CollectionEntry<'lessons'>; pathway: CollectionEntry<'pathways'>; }
+const {entry,pathway}=Astro.props;
+---
+<LessonPage entry={entry} pathway={pathway} />

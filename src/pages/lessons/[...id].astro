@@ -1,0 +1,9 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import LessonPage from '../../components/lesson-page.astro';
+import { curriculum } from '../../lib/content';
+export async function getStaticPaths(){const {lessons}=await curriculum();return lessons.map(entry=>({params:{id:entry.id},props:{entry}}));}
+interface Props { entry: CollectionEntry<'lessons'>; }
+const {entry}=Astro.props;
+---
+<LessonPage entry={entry} />

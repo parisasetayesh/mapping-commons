@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import MapMark from '../components/map-mark.astro';
+interface Props { title: string; description?: string; home?: boolean; showEdition?: boolean; }
+const { title, home = false, showEdition = true, description = 'An open guide to reading, questioning, and making maps.' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const nav = [{ title: 'Start', href: base }, { title: 'Lessons', href: `${base}lessons/` }, { title: 'Pathways', href: `${base}pathways/` }];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <title>{title} | Mapping Commons</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="site-name" href={base}><MapMark class="brand-mark" /> Mapping Commons</a>
+      <nav aria-label="Primary navigation">
+        {nav.map(item => <a href={item.href} aria-current={(item.href === base ? Astro.url.pathname === base : (Astro.url.pathname.startsWith(item.href) || (item.title === 'Lessons' && Astro.url.pathname.startsWith(`${base}categories/`)))) ? 'page' : undefined}>{item.title}</a>)}
+      </nav>
+    </header>
+    <slot name="below-header" />
+    <main id="main" class:list={[{ "home-main": home }]} tabindex="-1"><slot /></main>
+    <footer class="site-footer">
+      <p class="footer-title">An open learning commons.</p>
+      <p class="small">{showEdition&&<>Pilot edition · Curriculum in development.<br /></>}Lesson licenses appear with each lesson.</p>
+    </footer>
+  </body>
+</html>

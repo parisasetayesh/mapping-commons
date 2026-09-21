@@ -1,0 +1,42 @@
+version: 0.1
+
+lesson_required_fields:
+  - id
+  - title
+  - summary
+  - primary_category
+  - categories
+  - lesson_type
+  - level
+  - duration_minutes
+  - learning_objectives
+  - authors
+  - status
+  - license
+
+lesson_optional_fields:
+  - content_owner # Lesson ownership; separate from source-deck credit.
+  - topics
+  - tools
+  - datasets
+  - audiences
+  - prerequisites
+  - materials
+  - produces
+  - accessibility
+  - source_ids
+  - last_reviewed
+
+pathway_required_fields:
+  - id
+  - title
+  - summary
+  - audiences
+  - steps
+
+pathway_step_fields:
+  - lesson
+  - label
+  - required
+  - note
+

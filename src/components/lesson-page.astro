@@ -1,0 +1,48 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import PathwayBand from './pathway-band.astro';
+import DomainLabel from './domain-label.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { curriculum, domains, statusLabels, readable, pathwayLessonHref } from '../lib/content';
+interface Props { entry: CollectionEntry<'lessons'>; pathway?: CollectionEntry<'pathways'>; }
+const {entry,pathway}=Astro.props; const d=entry.data; const base=import.meta.env.BASE_URL;
+const {Content,headings}=await render(entry);
+const {pathways,lessonById}=await curriculum();
+const related=pathways.filter(p=>p.data.steps.some(s=>s.lesson===entry.id));
+const planned=d.status==='structured-stub';
+const currentIndex=pathway?.data.steps.findIndex(s=>s.lesson===entry.id) ?? -1;
+const previous=pathway?.data.steps[currentIndex-1];
+const next=pathway?.data.steps[currentIndex+1];
+const lessonHref=(id:string)=>pathway?.data.steps.some(s=>s.lesson===id)?pathwayLessonHref(pathway.id,id):`${base}lessons/${id}/`;
+---
+<BaseLayout title={d.title} description={d.summary}>
+  <Fragment slot="below-header">{pathway&&<PathwayBand pathway={pathway} current={entry.id} lessonById={lessonById} />}</Fragment>
+  <a class="back-link" href={`${base}lessons/`}>← All lessons</a>
+  <header class="page-header"><p class="eyebrow"><DomainLabel domain={d.primary_category} /></p><h1>{d.title}</h1><p class="lede">{d.summary}</p><p>{statusLabels[d.status]} · {d.duration_minutes} minutes · {readable(d.level)} · {readable(d.lesson_type)}</p>
+  <p class="pilot-note">{planned?'Planned lesson. This page outlines the intended sequence and checkpoint; the full lesson is not yet written.':d.status==='complete-draft'?'Draft lesson. This material has not completed editorial or classroom review.':statusLabels[d.status]}</p></header>
+  <div class="lesson-grid">
+    <aside class="contents"><nav aria-label="On this page"><h2>In this lesson</h2><ol>{headings.filter(h=>h.depth===2).map(h=><li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol></nav></aside>
+    <article class="lesson">
+      <section class="lesson-meta" aria-labelledby="objectives-heading"><h2 id="objectives-heading">{planned?'Planned learning objectives':'Learning objectives'}</h2><ul>{d.learning_objectives.map(objective=><li>{objective}</li>)}</ul>{d.produces&&<p><strong>{planned?'Planned output:':'You will produce:'}</strong> {d.produces}</p>}</section>
+      <section class="requirements" aria-labelledby="requirements-heading"><h2 id="requirements-heading">Before you begin</h2>
+        <p><strong>For:</strong> {d.audiences.map(readable).join(', ')}</p>
+        <p><strong>Prerequisites:</strong> {d.prerequisites.length?d.prerequisites.map((id,i)=><>{i>0?'; ':''}<a href={lessonHref(id)}>{lessonById.get(id)!.data.title}</a> ({statusLabels[lessonById.get(id)!.data.status]})</>):'None listed.'}</p>
+        <p><strong>Tools:</strong> {d.tools.length?d.tools.map(readable).join(', '):'None listed.'}</p>
+        <p><strong>Datasets:</strong> {d.datasets.length?d.datasets.join('; '):'None listed.'}</p>
+        {d.materials.length>0&&<><h3>Materials</h3><ul>{d.materials.map(item=><li>{item}</li>)}</ul></>}
+        {d.accessibility&&<div class="access-note"><strong>Access and preparation</strong><ul><li>Installation {d.accessibility.installation_required?'required':'not required'}.</li><li>Account {d.accessibility.account_required?'required':'not required'}.</li><li>Large screen {d.accessibility.large_screen_recommended?'recommended':'not required'}.</li></ul></div>}
+      </section>
+      <div class="prose"><Content /></div>
+      {pathway&&<nav class="pathway-reading-nav" aria-label="Continue in this pathway">
+        {previous?<a href={pathwayLessonHref(pathway.id,previous.lesson)}><span>← Previous lesson</span><strong>{lessonById.get(previous.lesson)!.data.title}</strong></a>:<a href={`${base}pathways/`}>← All pathways</a>}
+        {next?<a href={pathwayLessonHref(pathway.id,next.lesson)}><span>Next lesson →{next.required?'':' · Optional'}</span><strong>{lessonById.get(next.lesson)!.data.title}</strong></a>:<a href={`${base}pathways/${pathway.id}/`}>End of sequence · View pathway →</a>}
+      </nav>}
+      <nav class="related" aria-label="Related pathways"><h2>Pathways with this lesson</h2>{related.length?related.map(p=><p><a href={pathwayLessonHref(p.id,entry.id)}>{p.data.title}</a></p>):<p><a href={`${base}pathways/`}>Explore pathways</a></p>}</nav>
+      <footer class="lesson-footer"><p>Authors: {d.authors.join(', ')}</p>{d.content_owner&&<p>Content owner: {d.content_owner}</p>}<p>License: {d.license}</p><p>{d.last_reviewed?<>Source review date: <time datetime={d.last_reviewed}>{d.last_reviewed}</time> · {statusLabels[d.status]}</>:'Review date not recorded.'}</p>
+        <p>Categories: {d.categories.map((c,i)=><>{i>0?' · ':''}<a href={`${base}categories/${c}/`}>{domains[c]}</a></>)}</p>
+        {d.topics.length>0&&<p>Topics: {d.topics.map(readable).join(', ')}</p>}
+        {d.source_ids.length>0&&<details><summary>Source record identifiers</summary><ul>{d.source_ids.map(id=><li>{id}</li>)}</ul></details>}
+      </footer>
+    </article>
+  </div>
+</BaseLayout>

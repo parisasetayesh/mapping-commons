@@ -1,0 +1,47 @@
+id: human-geography-data-for-scientists
+title: "Human Geography Data for Physical Scientists"
+summary: "Introduce researchers trained in physical and environmental sciences to the structure, uncertainty, geography, and politics of social data."
+audiences:
+  - physical-scientists
+  - environmental-scientists
+  - interdisciplinary-research-teams
+  - graduate-students
+level: beginner
+estimated_minutes: 270
+outcome: "A documented plan for selecting, comparing, and joining a human-geography dataset without misrepresenting its population or geographic unit."
+
+steps:
+  - lesson: human-geography-data-for-scientists
+    label: "Begin with how social data differs"
+    required: true
+    note: "Distinguish measured environmental variables from estimates, classifications, administrative records, and survey data."
+
+  - lesson: understand-geographic-units
+    label: "Identify the geographic unit"
+    required: true
+    note: "Examine how tracts, ZIP codes, municipalities, service areas, and environmental boundaries differ."
+
+  - lesson: census-acs-geography
+    label: "Understand Census and ACS structures"
+    required: true
+    note: "Distinguish programs, estimates, boundaries, time periods, and uncertainty."
+
+  - lesson: read-metadata-before-you-map
+    label: "Read definitions and documentation"
+    required: true
+    note: "Confirm the population, denominator, collection method, field definition, and coverage."
+
+  - lesson: counts-rates-normalization
+    label: "Make fair comparisons"
+    required: true
+    note: "Choose counts, rates, percentages, densities, or standardized measures intentionally."
+
+  - lesson: join-data-to-geography
+    label: "Connect attributes to boundaries"
+    required: true
+    note: "Use identifiers such as GEOIDs and verify join coverage."
+
+  - lesson: data-ownership-privacy-uncertainty
+    label: "Document uncertainty and ethical limits"
+    required: true
+    note: "Record missingness, margins of error, privacy constraints, and representational consequences."

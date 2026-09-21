@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { statusLabels, pathwayLessonHref } from '../lib/content';
+interface Props { pathway: CollectionEntry<'pathways'>; current: string; lessonById: Map<string, CollectionEntry<'lessons'>>; }
+const {pathway,current,lessonById}=Astro.props;
+const index=pathway.data.steps.findIndex(s=>s.lesson===current);
+const base=import.meta.env.BASE_URL;
+---
+<div class="pathway-context" data-pathway={pathway.id}>
+  <nav class="pathway-band" aria-label="Current pathway">
+    <button class="pathway-toggle" type="button" aria-haspopup="dialog" aria-controls="pathway-drawer" aria-expanded="false" hidden><span aria-hidden="true">☰</span> Pathway</button>
+    <div class="pathway-band-heading"><a href={`${base}pathways/${pathway.id}/`}>{pathway.data.title}</a><span>Lesson {index+1} of {pathway.data.steps.length} · {pathway.data.steps[index].required?'Required':'Optional'}</span></div>
+    <ol class="pathway-mini-steps" aria-label="Pathway steps">
+      {pathway.data.steps.map((step,i)=>{const lesson=lessonById.get(step.lesson)!;return <li><a data-domain={lesson.data.primary_category} href={pathwayLessonHref(pathway.id,lesson.id)} aria-current={step.lesson===current?'step':undefined} aria-label={`${i+1}. ${lesson.data.title}. ${step.required?'Required':'Optional'}. ${statusLabels[lesson.data.status]}`} title={`${i+1}. ${lesson.data.title}${step.required?'':' (optional)'}`}>{i+1}</a></li>;})}
+    </ol>
+    <a class="pathway-exit" href={`${base}pathways/`}>All pathways</a>
+  </nav>
+  <dialog id="pathway-drawer" class="pathway-drawer" aria-labelledby="pathway-drawer-title">
+    <div class="pathway-drawer-top"><a href={`${base}pathways/`}>← All pathways</a><button type="button" class="pathway-close" aria-label="Close pathway navigation">Close <span aria-hidden="true">×</span></button></div>
+    <h2 id="pathway-drawer-title">{pathway.data.title}</h2>
+    <p class="small">Lesson {index+1} of {pathway.data.steps.length}</p>
+    <nav aria-label="Full pathway sequence"><ol>
+      {pathway.data.steps.map((step,i)=>{const lesson=lessonById.get(step.lesson)!;return <li><a href={pathwayLessonHref(pathway.id,lesson.id)} aria-current={step.lesson===current?'step':undefined}>
+        <span class="drawer-number" data-domain={lesson.data.primary_category}>{i+1}</span><span><strong>{lesson.data.title}</strong><span class="drawer-meta">{step.required?'Required':'Optional'} · {statusLabels[lesson.data.status]} · {lesson.data.duration_minutes} min{step.lesson===current?' · Current lesson':''}</span><span class="drawer-note">{step.note}</span></span>
+      </a></li>;})}
+    </ol></nav>
+  </dialog>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('.pathway-context').forEach(context=>{
+    const toggle=context.querySelector<HTMLButtonElement>('.pathway-toggle')!;
+    const drawer=context.querySelector<HTMLDialogElement>('dialog')!;
+    const close=context.querySelector<HTMLButtonElement>('.pathway-close')!;
+    if(typeof drawer.showModal!=='function') return;
+    toggle.hidden=false;
+    const strip=context.querySelector<HTMLOListElement>('.pathway-mini-steps')!;
+    const active=strip.querySelector<HTMLAnchorElement>('[aria-current="step"]')!;
+    strip.scrollLeft += active.getBoundingClientRect().left - strip.getBoundingClientRect().left - (strip.clientWidth-active.offsetWidth)/2;
+    toggle.addEventListener('click',()=>{
+      if(drawer.open){drawer.close();return;}
+      drawer.showModal(); toggle.setAttribute('aria-expanded','true');
+      document.body.classList.add('pathway-drawer-open');
+      drawer.querySelector<HTMLAnchorElement>('[aria-current="step"]')?.focus();
+    });
+    close.addEventListener('click',()=>drawer.close());
+    drawer.addEventListener('click',event=>{
+      if(event.target!==drawer)return;
+      const rect=drawer.getBoundingClientRect();
+      if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)drawer.close();
+    });
+    drawer.addEventListener('close',()=>{
+      toggle.setAttribute('aria-expanded','false');document.body.classList.remove('pathway-drawer-open');toggle.focus();
+    });
+  });
+</script>

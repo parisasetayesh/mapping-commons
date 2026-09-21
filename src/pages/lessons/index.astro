@@ -1,0 +1,9 @@
+---
+import { curriculum } from '../../lib/content';
+import LessonList from '../../components/lesson-list.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const { lessons } = await curriculum();
+---
+<BaseLayout title="Lessons">
+  <LessonList lessons={lessons} />
+</BaseLayout>

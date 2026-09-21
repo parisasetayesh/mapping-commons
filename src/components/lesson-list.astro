@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import LessonTile from './lesson-tile.astro';
+import { domains } from '../lib/content';
+interface Props { lessons: CollectionEntry<'lessons'>[]; category?: string; }
+const { lessons, category } = Astro.props;
+const base=import.meta.env.BASE_URL;
+const groups = category ? [
+  { title: domains[category], secondary: false, lessons: lessons.filter(lesson => lesson.data.primary_category === category) },
+  { title: 'Also relevant', secondary: true, lessons: lessons.filter(lesson => lesson.data.primary_category !== category) },
+] : [{ title: 'All lessons', secondary: false, lessons }];
+---
+<div class="lesson-browser">
+  <header class="lesson-browser-header">
+    <h1><a href={`${base}lessons/`} aria-label="Lessons — all categories">Lessons</a></h1>
+    <div class="lesson-search" hidden><label class="sr-only" for="lesson-search">Find a lesson</label><input id="lesson-search" type="search" placeholder="Search lessons" /><p class="search-count small" role="status"></p></div>
+  </header>
+  <nav class="category-navigation" aria-label="Lesson categories">{Object.keys(domains).map(id=><a data-domain={id} href={`${base}categories/${id}/`} aria-current={category===id?'page':undefined}>{domains[id]}</a>)}</nav>
+  {groups.filter(group => group.lessons.length).map(group => <section class:list={["lesson-group", { "secondary-lessons": group.secondary }]} data-lesson-group>
+    <h2 class:list={[{ "sr-only": !group.secondary }]}>{group.title}</h2>
+    <ul class="lesson-list">{group.lessons.map(lesson => <li data-search={[lesson.data.title,lesson.data.summary,...lesson.data.topics,...lesson.data.tools,...lesson.data.categories.map(c=>domains[c])].join(' ').toLowerCase()}>
+      <LessonTile lesson={lesson} secondary={group.secondary} />
+    </li>)}</ul>
+  </section>)}
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('.lesson-browser').forEach(browser=>{
+    const panel=browser.querySelector<HTMLElement>('.lesson-search')!;
+    const input=browser.querySelector<HTMLInputElement>('input')!;
+    const rows=[...browser.querySelectorAll<HTMLElement>('[data-search]')];
+    const groups=[...browser.querySelectorAll<HTMLElement>('[data-lesson-group]')];
+    const count=browser.querySelector<HTMLElement>('.search-count')!;
+    panel.hidden=false;
+    input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();let visible=0;rows.forEach(row=>{row.hidden=!row.dataset.search!.includes(q);if(!row.hidden)visible++;});groups.forEach(group=>{group.hidden=![...group.querySelectorAll<HTMLElement>('[data-search]')].some(row=>!row.hidden);});count.textContent=`${visible} ${visible===1?'lesson':'lessons'} found`;});
+  });
+</script>

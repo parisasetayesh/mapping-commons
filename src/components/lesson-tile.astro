@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { statusLabels, domains } from '../lib/content';
+interface Props { lesson: CollectionEntry<'lessons'>; secondary?: boolean; }
+const { lesson, secondary = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+    <a class:list={["lesson-tile", { "cross-listed-tile": secondary }]} data-domain={lesson.data.primary_category} href={`${base}lessons/${lesson.id}/`}>
+      <span class="tile-status">{statusLabels[lesson.data.status]}</span>
+      <h3>{lesson.data.title}</h3>
+      <span class="tile-byline">By {lesson.data.authors.join(', ')}</span>
+      {secondary ? <span class="tile-origin">{domains[lesson.data.primary_category]}</span> : <span class="sr-only">Primary category: {domains[lesson.data.primary_category]}.</span>}
+      <span class="tile-meta">
+        <span class="tile-level"><span class="level-squares" aria-hidden="true">{[1,2,3].map(n=><span class:list={[{filled:n<=({beginner:1,intermediate:2,advanced:3}[lesson.data.level])}]} />)}</span><span>{lesson.data.level}</span></span>
+        <span class="time-disc" role="img" aria-label={`${lesson.data.duration_minutes} minutes`}><span aria-hidden="true">{lesson.data.duration_minutes}</span><span aria-hidden="true">min</span></span>
+      </span>
+    </a>

@@ -1,0 +1,13 @@
+---
+interface Props { class?: string; }
+const { class: className } = Astro.props;
+const groups = [
+  { color: 'var(--coral)', x: 0, tiles: [[0,0],[1,0],[2,0],[0,1],[1,1],[0,2]] },
+  { color: 'var(--yellow)', x: 216, tiles: [[0,0],[1,0],[0,1],[1,1],[1,2]] },
+  { color: 'var(--blue)', x: 376, tiles: [[0,0],[1,0],[0,1],[1,1],[0,2],[1,2]] },
+  { color: 'var(--data-gray)', x: 520, tiles: [[0,0],[1,0],[0,1],[1,1]] },
+];
+---
+<svg class={className} viewBox="0 0 632 168" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  {groups.map(group => <g fill={group.color}>{group.tiles.map(([x,y]) => <rect x={group.x+x*58} y={y*58} width="52" height="52" />)}</g>)}
+</svg>

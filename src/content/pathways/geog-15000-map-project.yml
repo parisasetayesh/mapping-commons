@@ -1,0 +1,46 @@
+id: geog-15000-map-project
+title: "Find and Use Maps for a Class Project"
+summary: "Guide introductory geography students from a global theme to a well-chosen, interpreted, exported, and cited map."
+audiences:
+  - undergraduate-students
+  - introductory-geography-courses
+level: beginner
+estimated_minutes: 205
+outcome: "A selected map or dashboard figure with a clear caption, source citation, regional interpretation, and stated limitation."
+course_example: "GEOG 15000 World Regions in Global Context"
+
+steps:
+  - lesson: start-mappable-question
+    label: "Frame the theme as a question"
+    required: true
+    note: "Move from a broad global theme to a question that a map can help investigate."
+
+  - lesson: find-data-for-question
+    label: "Choose a credible map or dashboard"
+    required: true
+    note: "Use the course's curated map and report guide to identify one or two suitable sources."
+
+  - lesson: read-public-data-dashboard
+    label: "Read the map before exporting it"
+    required: true
+    note: "Inspect the indicator, geography, date, legend, filters, and comparison options."
+
+  - lesson: read-metadata-before-you-map
+    label: "Check what the indicator means"
+    required: true
+    note: "Confirm definitions, sources, coverage, time period, and limitations."
+
+  - lesson: maps-as-arguments
+    label: "Interpret the map's claim"
+    required: true
+    note: "Explain what pattern the map supports without treating the visualization as self-explanatory."
+
+  - lesson: cite-map-and-data
+    label: "Export caption and cite"
+    required: true
+    note: "Create a usable figure and credit the map platform, dataset, indicator, and date."
+
+  - lesson: what-map-leaves-out
+    label: "State one limitation"
+    required: true
+    note: "Name information, scale, population, or experience the selected map does not represent."
