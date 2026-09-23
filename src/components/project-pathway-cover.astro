@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { pathwayLessonHref } from '../lib/content';
+interface Props { pathway: CollectionEntry<'pathways'>; }
+const {pathway}=Astro.props;
+const d=pathway.data;
+const project=d.project_brief!;
+---
+<div class="project-pathway-layout">
+  <article class="pathway-front-card project-pathway-card" aria-labelledby="pathway-title">
+    <p class="eyebrow">Course project · {d.course_example}</p>
+    <h1 id="pathway-title">{project.title}</h1>
+    <p class="project-introduction">{project.introduction}</p>
+    <details class="project-themes"><summary>Choose a global theme</summary><p>{project.themes}</p></details>
+    <div class="project-components">{project.components.map(component=><section>
+      <h2>{component.title}</h2><p>{component.description}</p>
+      <p class="project-deliverable">{component.deliverable}</p>
+    </section>)}</div>
+    <section><h2>Your map contribution</h2><p>{project.map_task}</p></section>
+    <p class="small">Follow your current course handout for deadlines and submission details.</p>
+    <a class="pathway-start" href={pathwayLessonHref(pathway.id,d.steps[0].lesson)}>Begin pathway →</a>
+  </article>
+  <aside class="reader-examples project-see-also" aria-labelledby="project-see-also-title">
+    <h2 id="project-see-also-title">Also see</h2>
+    <p class="small">Demo links for this preview</p>
+    <nav aria-label="Example project resources"><ul>{project.demo_resources.map(resource=><li><a href={`#demo-${resource.id}`}>{resource.title} <span aria-hidden="true">↗</span></a></li>)}</ul></nav>
+    {project.demo_resources.map(resource=><section class="demo-resource-note" id={`demo-${resource.id}`} tabindex="-1"><h3>{resource.title}</h3><p>{resource.description}</p><p class="small">Example only. No course folder or student work is connected.</p></section>)}
+  </aside>
+</div>

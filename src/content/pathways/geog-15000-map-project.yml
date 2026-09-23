@@ -1,6 +1,6 @@
 id: geog-15000-map-project
 title: "Find and Use Maps for a Class Project"
-summary: "Guide introductory geography students from a global theme to a well-chosen, interpreted, exported, and cited map."
+summary: "Use maps as evidence in the GEOG 15000 Global Themes and World Regions project, connecting a group investigation of a global theme with an individual regional report."
 audiences:
   - undergraduate-students
   - introductory-geography-courses
@@ -8,6 +8,32 @@ level: beginner
 estimated_minutes: 205
 outcome: "A selected map or dashboard figure with a clear caption, source citation, regional interpretation, and stated limitation."
 course_example: "GEOG 15000 World Regions in Global Context"
+purpose: "Investigate how global themes affect world regions differently, and choose map evidence that helps explain those differences."
+project_brief:
+  title: "Global Themes and World Regions"
+  introduction: "Explore how a global theme shapes different world regions, then focus on one region. Use maps and other evidence to explain current conditions, change, and connections between themes."
+  themes: "Choose a theme such as climate change, globalization, economic or political systems, civil society, urbanization and demographics, human rights, major global events, or COVID and its impacts."
+  components:
+    - title: "The global: work as a group"
+      description: "Join a theme group of up to three people. Compare how the theme affects world regions, explain changes over roughly thirty years, and consider its direction over the next twenty."
+      deliverable: "Up to about 1,000 words, 1–3 figures or tables, and five references."
+    - title: "The regional: work individually"
+      description: "Choose one world region. Explain current conditions, how your theme interacts with other themes, and what may change over the next twenty years."
+      deliverable: "Up to about 750 words, 1–3 figures or tables, and five references."
+  map_task: "Find a map or dashboard that supports your argument. Check its indicator, geography, date, and source; explain the pattern; then add a caption, citation, and one limitation."
+  demo_resources:
+    - id: project-folder
+      title: "Project folder"
+      description: "A shared space for the assignment, theme sign-up sheet, and group documents."
+    - id: example-projects
+      title: "Example projects"
+      description: "Sample group and regional reports showing how maps can support an argument."
+    - id: maps-and-data
+      title: "Maps and data guide"
+      description: "A curated starting list of maps, dashboards, and reports for each global theme."
+    - id: submission-guide
+      title: "Submission guide"
+      description: "Instructions for sharing the group report and submitting the individual report through the course site."
 
 steps:
   - lesson: start-mappable-question

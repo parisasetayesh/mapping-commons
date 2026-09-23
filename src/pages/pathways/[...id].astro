@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import PathwaySequence from '../../components/pathway-sequence.astro';
+import ProjectPathwayCover from '../../components/project-pathway-cover.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { curriculum, requiredMinutes, statusLabels, readable, pathwayLessonHref } from '../../lib/content';
 export async function getStaticPaths(){const {pathways}=await curriculum();return pathways.map(entry=>({params:{id:entry.id},props:{entry}}));}
@@ -9,7 +10,7 @@ const {entry}=Astro.props;const d=entry.data;const {lessonById}=await curriculum
 ---
 <BaseLayout title={d.title} description={d.summary}>
   <a class="back-link" href={`${import.meta.env.BASE_URL}pathways/`}>← All pathways</a>
-  <article class="pathway-front-card" aria-labelledby="pathway-title">
+  {d.project_brief ? <ProjectPathwayCover pathway={entry} /> : <article class="pathway-front-card" aria-labelledby="pathway-title">
     <p class="eyebrow">Pathway · {requiredMinutes(entry,lessonById)} required minutes · {readable(d.level)}</p>
     <h1 id="pathway-title">{d.title}</h1>
     <p class="pathway-designer">Designed by: {d.designers.length?d.designers.join(', '):'Credit to be added'}</p>
@@ -19,7 +20,7 @@ const {entry}=Astro.props;const d=entry.data;const {lessonById}=await curriculum
     <section class="pathway-front-resources"><h2>Resources</h2>{d.resources.length?<ul>{d.resources.map(r=><li><a href={r.url}>{r.title}</a>{r.description&&<p>{r.description}</p>}</li>)}</ul>:<p>Resources will be added here.</p>}</section>
     <p class="small">This pathway includes draft and planned lessons. Optional lessons add to the required time.</p>
     <a class="pathway-start" href={pathwayLessonHref(entry.id,d.steps[0].lesson)}>Begin pathway →</a>
-  </article>
+  </article>}
   <PathwaySequence pathway={entry} lessonById={lessonById} />
   <section aria-labelledby="sequence"><h2 id="sequence">Your learning sequence</h2><ol class="steps">{d.steps.map(step=>{const lesson=lessonById.get(step.lesson)!;return <li><p class="eyebrow">{step.required?'Required':'Optional'} · {statusLabels[lesson.data.status]} · {lesson.data.duration_minutes} minutes</p><h3><a href={pathwayLessonHref(entry.id,lesson.id)}>{lesson.data.title}</a></h3><p><strong>{step.label}</strong></p><p>{step.note}</p></li>;})}</ol></section>
 </BaseLayout>

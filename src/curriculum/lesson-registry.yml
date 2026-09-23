@@ -147,7 +147,7 @@ lessons:
     status: structured-stub
     duration_minutes: 35
   - id: human-geography-data-for-scientists
-    title: Human Geography Data for Physical Scientists
+    title: Demographic Data for Physical Scientists
     file: working-with-data/human-geography-data-for-scientists.md
     primary_category: working-with-data
     categories:

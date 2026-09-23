@@ -34,6 +34,12 @@ const pathways = defineCollection({
     id:text, title:text, summary:text, audiences:list.min(1), level:text, estimated_minutes:z.number().int().positive(),
     outcome:text, example_case:text.optional(), course_example:text.optional(),
     designers:list.default([]), purpose:text.optional(),
+    project_brief: z.object({
+      title:text, introduction:text, themes:text,
+      components:z.array(z.object({title:text,description:text,deliverable:text}).strict()).min(1),
+      map_task:text,
+      demo_resources:z.array(z.object({id:z.string().regex(/^[a-z0-9-]+$/),title:text,description:text}).strict()),
+    }).strict().optional(),
     resources:z.array(z.object({title:text,url:z.url(),description:text.optional()}).strict()).default([]),
     steps:z.array(z.object({lesson:text,label:text,required:z.boolean(),note:text})).min(1),
   }).strict(),
@@ -71,4 +77,3 @@ const glossary = defineCollection({
   }),
 });
 export const collections = { lessons, pathways, cases, resources, glossary };
-

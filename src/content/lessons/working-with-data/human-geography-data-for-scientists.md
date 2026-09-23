@@ -1,7 +1,7 @@
 ---
 id: human-geography-data-for-scientists
-title: "Human Geography Data for Physical Scientists"
-summary: "Build a practical foundation for using demographic, social, administrative, and survey data in environmental and physical-science research."
+title: "Demographic Data for Physical Scientists"
+summary: "Build a practical foundation for interpreting population characteristics using census, survey, and administrative data in environmental and physical-science research."
 primary_category: working-with-data
 categories:
   - working-with-data
@@ -26,7 +26,7 @@ audiences:
   - interdisciplinary-research-teams
   - graduate-students
 learning_objectives:
-  - "Distinguish common forms of social and human-geography data."
+  - "Distinguish census counts, survey estimates, and administrative records used to describe populations."
   - "Identify the population, unit of observation, geographic unit, time period, and uncertainty of a social dataset."
   - "Recognize why administrative boundaries and environmental processes do not automatically align."
   - "Select an appropriate comparison measure rather than mapping raw counts by default."
@@ -63,7 +63,7 @@ In this lesson, you will:
 - Choose between counts, rates, percentages, and other comparison measures.
 
 **Time:** 45 minutes  
-**You will produce:** A documented interpretation statement for one human-geography dataset.
+**You will produce:** A documented interpretation statement for one demographic dataset.
 
 ## Why this matters
 

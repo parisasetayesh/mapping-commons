@@ -1,18 +1,28 @@
 id: human-geography-data-for-scientists
-title: "Human Geography Data for Physical Scientists"
-summary: "Introduce researchers trained in physical and environmental sciences to the structure, uncertainty, geography, and politics of social data."
+title: "Demographic Data"
+summary: "Learn how demographic data describes populations, choose meaningful geographic comparisons, and plan a clearly documented map."
 audiences:
   - physical-scientists
   - environmental-scientists
   - interdisciplinary-research-teams
   - graduate-students
 level: beginner
-estimated_minutes: 270
-outcome: "A documented plan for selecting, comparing, and joining a human-geography dataset without misrepresenting its population or geographic unit."
+estimated_minutes: 420
+outcome: "A demographic mapping plan that identifies the population, geography, comparison measure, uncertainty, and sources, with an introductory QGIS mapping exercise."
 
 steps:
+  - lesson: what-counts-as-a-map
+    label: "Begin with what a map represents"
+    required: true
+    note: "Consider how a map can describe population patterns and what it cannot show about individual people."
+
+  - lesson: map-purpose-and-technique
+    label: "Choose a map type for your demographic question"
+    required: true
+    note: "Match the question and population measure to a suitable map type before choosing software."
+
   - lesson: human-geography-data-for-scientists
-    label: "Begin with how social data differs"
+    label: "Understand how demographic data is produced"
     required: true
     note: "Distinguish measured environmental variables from estimates, classifications, administrative records, and survey data."
 
@@ -45,3 +55,13 @@ steps:
     label: "Document uncertainty and ethical limits"
     required: true
     note: "Record missingness, margins of error, privacy constraints, and representational consequences."
+
+  - lesson: first-map-in-qgis
+    label: "Practice building a first map"
+    required: true
+    note: "Use the supplied practice layer to learn the QGIS workflow, then identify how you would apply it to your documented demographic dataset."
+
+  - lesson: cite-map-and-data
+    label: "Make the demographic evidence traceable"
+    required: true
+    note: "Write a source note that identifies the population measure, data producer, geography, reference period, and limitations."
